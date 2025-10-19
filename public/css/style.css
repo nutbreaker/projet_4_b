@@ -424,7 +424,8 @@ pages
 
 .books,
 .book,
-.signin {
+.signin,
+.signup {
     --body-grid-gap: 0;
 
     main {
@@ -598,11 +599,12 @@ book
 
 /*
 ********************************************************************************
-Sign in
+Sign in / Sign up
 ********************************************************************************
 */
 
-.signin-section {
+.signin-section,
+.signup-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0;
@@ -622,7 +624,7 @@ Sign in
         flex-direction: column;
         gap: 3.2rem;
         padding-inline: 15rem 23.7rem;
-        padding-top: 20rem;
+        padding-top: 13rem;
     }
 
     label {
