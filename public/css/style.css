@@ -15,6 +15,7 @@
 
     /* Colors */
     --bg-color: #F5F3EF;
+    --bg-color-white: #FFFFFF;
     --section-bg-color: #FAF9F7;
     --card-bg-color: #FFFFFF;
     --default-text-color: #292929;
@@ -49,7 +50,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 8em;
+    gap: var(--body-grid-gap, 8em);
     margin: 0;
 }
 
@@ -411,4 +412,86 @@ footer
 
 .footer-menu {
     justify-content: end;
+}
+
+/*
+********************************************************************************
+pages
+********************************************************************************
+*/
+
+.books {
+    --body-grid-gap: 0;
+
+    main {
+        background-color: var(--section-bg-color);
+    }
+
+    .footer {
+        margin: 0;
+        background-color: var(--bg-color-white);
+    }
+}
+
+/*
+********************************************************************************
+book exchange
+********************************************************************************
+*/
+
+.book-exchange {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    background: var(--section-bg-color);
+    padding-block: 13rem 6.4em;
+    max-width: min(92rem, 100%);
+}
+
+.book-exchange-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.book-exchange-title {
+    margin-block: 0;
+    font-size: 3.6rem;
+}
+
+.book-exchange-search {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    width: 32.2rem;
+    padding: 1.6rem 1.2rem;
+    font-size: 1.4em;
+    background: var(--bg-color-white);
+    border: solid 1px #f0f0f0;
+    border-radius: .6rem;
+}
+
+.book-exchange-search::before {
+    align-self: end;
+    content: url(/img/magnifying-glass.svg);
+}
+
+.book-exchange-input {
+    all: unset;
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.book-exchange-cards {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+    gap: 3.8em;
+    margin-block: 8rem 4.8em;
+
+    .card {
+        width: unset;
+    }
 }
