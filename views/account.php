@@ -112,7 +112,7 @@
 
                     'The Kinfolk Table' incarne parfaitement l'esprit de la cuisine et de la camaraderie, et il est certain que ce livre trouvera une place spéciale dans le cœur de tout amoureux de la cuisine et des rencontres inspirantes.</span>
                 <span class="account-book-available">disponible</span>
-                <span class="account-book-action"><a class="account-book-edit" href="#">éditer</a> <a class="account-book-delete" href="#">supprimer</a></span>
+                <span class="account-book-action"><a class="account-book-edit" href="/edit?id=1">éditer</a> <a class="account-book-delete" href="#">supprimer</a></span>
             </div>
 
             <div class="account-book">
