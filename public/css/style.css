@@ -11,7 +11,7 @@
 :root {
     /* template */
     --template-width: 100%;
-    --template-max-width: 144em;
+    --template-max-width: 144rem;
 
     /* Colors */
     --bg-color: #F5F3EF;
@@ -57,7 +57,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: var(--body-grid-gap, 8em);
+    gap: var(--body-grid-gap, 8rem);
     margin: 0;
 }
 
@@ -65,7 +65,7 @@ header {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 7.8em;
+    gap: 7.8rem;
     width: var(--template-width);
     max-width: var(--template-max-width);
     padding: 1.5em 10.45%;
@@ -82,7 +82,7 @@ main {
 footer {
     width: var(--template-width);
     max-width: var(--template-max-width);
-    margin-top: 8em;
+    margin-top: 8rem;
 }
 
 section {
@@ -95,14 +95,14 @@ nav {
 
 ul {
     display: flex;
-    gap: 4.2em;
+    gap: 4.2rem;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 li a {
-    font-size: 1.4em;
+    font-size: 1.4rem;
     text-decoration: none;
     color: var(--default-text-color);
     transition: all 125ms;
@@ -118,8 +118,8 @@ h1 {
 }
 
 h2 {
-    margin-block: 2.5em 0;
-    font-size: 3.2em;
+    margin-block: 8rem 0;
+    font-size: 3.2rem;
     font-family: var(--font-playfair);
     font-weight: var(--font-playfair-weight);
     text-align: center;
@@ -130,7 +130,7 @@ h3 {
 }
 
 p {
-    font-size: 1.6em;
+    font-size: 1.6rem;
 }
 
 a {
@@ -145,12 +145,12 @@ button
 */
 
 .btn {
-    padding: 1.375em 2.375em;
-    font-size: 1.6em;
+    padding: 2.2rem 3.8rem;
+    font-size: 1.6rem;
     font-weight: var(--font-inter-weight-bold);
     color: var(--btn-text-color);
     background-color: var(--btn-color);
-    border-radius: 0.625em;
+    border-radius: 1rem;
     transition: all 250ms;
 }
 
@@ -171,9 +171,9 @@ card
 ********************************************************************************
 */
 .card {
-    width: 20em;
+    width: 20rem;
     margin: 0;
-    border-radius: 1em;
+    border-radius: 1rem;
     background: var(--card-bg-color);
 }
 
@@ -186,23 +186,23 @@ card
 .card-figcaption {
     display: flex;
     flex-direction: column;
-    gap: .8em;
-    padding: 1.9em 1.4em;
+    gap: .8rem;
+    padding: 1.9rem 1.4rem;
 }
 
 .card-figcaption-title {
-    font-size: 1.6em;
+    font-size: 1.6rem;
     font-weight: 400;
 }
 
 .card-figcaption-subtitle {
     margin: 0;
-    font-size: 1.4em;
+    font-size: 1.4rem;
     color: var(--lighter-text-color);
 }
 
 .card-figcaption-info {
-    margin-top: 2.2em;
+    margin-top: 2.2rem;
     color: var(--lighter-text-color);
 }
 
@@ -223,7 +223,7 @@ header
 .header-chat {
     display: flex;
     align-items: center;
-    gap: 0.4em;
+    gap: 0.4rem;
 }
 
 .header-chat::before {
@@ -232,14 +232,16 @@ header
 }
 
 .header-chat-notification {
-    min-width: 1.2em;
-    padding: 0.3em;
-    font-size: .825em;
+    min-width: 1.05rem;
+    min-height: 1.5rem;
+    padding: 0.3rem;
+    font-size: .825rem;
     font-weight: var(--font-inter-weight-bold);
     text-align: center;
     text-shadow: none;
+    line-height: 1;
     color: var(--bg-color);
-    border-radius: 50%/40%;
+    border-radius: .765rem;
     background: var(--default-text-color);
 }
 
@@ -253,26 +255,26 @@ hero
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 10.8em;
-    margin-block: 0 12.8em;
+    gap: 10.8rem;
+    margin-block: 0 12.8rem;
 }
 
 .hero-content {
     display: grid;
     justify-items: start;
-    max-width: 32.9em;
-    margin-top: 5.2em;
+    max-width: 32.9rem;
+    margin-top: 5.2rem;
 }
 
 .hero-title {
     margin: 0;
-    font-size: 3.6em;
+    font-size: 3.6rem;
     text-align: left;
 }
 
 .hero-description {
-    font-size: 1.6em;
-    margin-block: 1em 2.5em;
+    font-size: 1.6rem;
+    margin-block: 1.6rem 4rem;
 }
 
 .hero-figure {
@@ -281,12 +283,12 @@ hero
 
 .hero-img {
     width: 100%;
-    max-width: 40.4em;
+    max-width: 40.4rem;
 }
 
 .hero-figcaption {
-    margin-top: 1em;
-    font-size: 1.2em;
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
     font-style: italic;
     text-align: right;
     font-weight: var(--font-inter-weight-medium);
@@ -304,15 +306,15 @@ latest books
     justify-content: center;
     justify-items: center;
     background: var(--section-bg-color);
-    padding-bottom: 6.4em;
+    padding-bottom: 6.4rem;
 }
 
 .latest-books-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 3.8em;
-    margin-block: 8em 4.8em;
+    gap: 3.8rem;
+    margin-block: 8rem 4.8rem;
 }
 
 /* 
@@ -323,12 +325,12 @@ how it works
 .how-it-works {
     display: grid;
     place-items: center;
-    padding-bottom: 8em;
+    padding-bottom: 8rem;
 }
 
 .how-it-works-description {
-    width: 24.8125em;
-    margin-block: 1.5em;
+    width: 39.7rem;
+    margin-block: 2.4rem;
     text-align: center;
 }
 
@@ -336,16 +338,16 @@ how it works
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 3.6em;
-    margin-block: 1.6em 4.8em;
+    gap: 3.6rem;
+    margin-block: 1.6rem 4.8rem;
 }
 
 .how-it-works-item {
-    max-width: 15.357em;
-    padding: 3.1428em 1.285em;
-    border-radius: 0.714em;
+    max-width: 21.5rem;
+    padding: 4.4rem 1.8rem;
+    border-radius: 1rem;
     background: white;
-    font-size: 1.4em;
+    font-size: 1.4rem;
     text-align: center;
 }
 
@@ -360,7 +362,7 @@ strech
 
 .strech-img {
     width: 100%;
-    height: 23em;
+    height: 23rem;
     object-fit: cover;
     object-position: 0 40%;
 }
@@ -374,25 +376,25 @@ our values
     display: grid;
     justify-content: center;
     justify-items: start;
-    grid-auto-columns: 39.2em;
+    grid-auto-columns: 39.2rem;
 }
 
 .our-values-title {
-    margin-bottom: 0.9em;
+    margin-bottom: 2.9rem;
 }
 
 .our-values-description {
-    margin-block: 0 1em;
+    margin-block: 0 1.6rem;
 }
 
 .our-values-footer {
     width: 100%;
     position: relative;
-    padding-top: 1.3em;
+    padding-top: 2.3rem;
 }
 
 .our-values-footer-content {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-style: italic;
     font-weight: var(--font-inter-weight-medium);
     color: var(--lighter-text-color);
@@ -400,8 +402,8 @@ our values
 
 .our-values-footer-img {
     position: absolute;
-    right: -6em;
-    top: 0;
+    right: -6rem;
+    top: 1rem;
 }
 
 /* 
@@ -411,10 +413,10 @@ footer
 */
 .footer {
     background: var(--section-bg-color);
-    height: 6.1em;
+    height: 6.1rem;
     display: grid;
     place-items: center end;
-    padding-right: 2.64em;
+    padding-right: 2.64rem;
 }
 
 .footer-menu {
@@ -480,7 +482,7 @@ book exchange
     gap: 1.2rem;
     width: 32.2rem;
     padding: 1.6rem 1.2rem;
-    font-size: 1.4em;
+    font-size: 1.4rem;
     background: var(--bg-color-white);
     border: solid 1px #f0f0f0;
     border-radius: .6rem;
@@ -494,6 +496,7 @@ book exchange
 .book-exchange-input {
     all: unset;
     width: 100%;
+    align-self: baseline;
     font-size: 1.4rem;
 }
 
@@ -501,8 +504,8 @@ book exchange
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
-    gap: 3.8em;
-    margin-block: 8rem 4.8em;
+    gap: 3.8rem;
+    margin-block: 8rem 4.8rem;
 
     .card {
         width: unset;
@@ -520,7 +523,7 @@ book
     gap: .25rem;
     width: var(--template-width);
     max-width: var(--template-max-width);
-    padding: 1.5em 10.45%;
+    padding: 1.5rem 10.45%;
     font-size: 1rem;
     color: var(--lighter-text-color);
 }
@@ -650,7 +653,7 @@ Sign in / Sign up
 
     input {
         padding: 1.6rem 1.2rem;
-        font-size: 1.4em;
+        font-size: 1.4rem;
         background: var(--bg-color-white);
         border: solid 1px #f0f0f0;
         border-radius: .6rem;
@@ -698,7 +701,7 @@ Account
         display: flex;
         flex-direction: column;
         flex: 1 1 0;
-        padding: 3.6rem 11.7rem;
+        padding: 3.6rem 3.2rem;
         background-color: var(--bg-color-white);
         border-radius: 2rem;
     }
@@ -727,7 +730,7 @@ Account
 
         input {
             padding: 1.6rem 1.2rem;
-            font-size: 1.4em;
+            font-size: 1.4rem;
             background: var(--color-light-gray);
             border: solid 1px #f0f0f0;
             border-radius: .6rem;
@@ -1164,7 +1167,7 @@ Profile
         textarea,
         select {
             padding: 1.6rem 1.2rem;
-            font-size: 1.4em;
+            font-size: 1.4rem;
             background: var(--color-light-gray);
             border: solid 1px #f0f0f0;
             border-radius: .6rem;
@@ -1190,7 +1193,7 @@ Profile
         flex-direction: row;
         flex-wrap: wrap;
         align-items: start;
-        padding: 1.5em 10.45% 0;
+        padding: 1.5rem 10.45% 0;
     }
 
     .footer {
@@ -1333,7 +1336,7 @@ Profile
             input {
                 flex: 1 1 auto;
                 padding: 1.6rem 1.2rem;
-                font-size: 1.4em;
+                font-size: 1.4rem;
                 background: var(--bg-color-white);
                 border: solid 1px #f0f0f0;
                 border-radius: .6rem;
