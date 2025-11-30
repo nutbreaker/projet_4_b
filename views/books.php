@@ -29,7 +29,7 @@
                     <a class="header-chat" href="/chat">Messagerie <span class="header-chat-notification">1</span></a>
                 </li>
                 <li>
-                    <a href="/account">Mon compte</a>
+                    <a class="header-account" href="/account">Mon compte</a>
                 </li>
                 <li>
                     <a href="/signin">Connexion</a>
@@ -84,7 +84,7 @@
                     </figcaption>
                 </figure>
 
-                 <figure class="card">
+                <figure class="card">
                     <img class="card-img" src="/img/esther.jpg" alt="">
                     <figcaption class="card-figcaption">
                         <h3 class="card-figcaption-title">Esther</h3>

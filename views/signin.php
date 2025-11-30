@@ -29,7 +29,7 @@
                     <a class="header-chat" href="/chat">Messagerie <span class="header-chat-notification">1</span></a>
                 </li>
                 <li>
-                    <a href="/account">Mon compte</a>
+                    <a class="header-account" href="/account">Mon compte</a>
                 </li>
                 <li>
                     <a href="/signin">Connexion</a>
