@@ -244,6 +244,17 @@ header
     background: var(--default-text-color);
 }
 
+.header-account {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.header-account::before {
+    align-self: end;
+    content: url(/img/account.svg);
+}
+
 /* 
 ********************************************************************************
 hero
