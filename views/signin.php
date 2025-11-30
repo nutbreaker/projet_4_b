@@ -39,26 +39,30 @@
     </header>
     <main>
         <section class="signin-section">
-            <form action="/signin" method="POST">
-                <h2>Inscription</h2>
-                <label for="name">
-                    Pseudo
-                    <input type="text" name="name" id="name">
-                </label>
-                <label for="email">
-                    Addresse e-mail
-                    <input type="email" name="email" id="email">
-                </label>
-                <label for="password">
-                    Mot de passe
-                    <input type="password" name="password" id="password">
-                </label>
-                <button class="btn" href="#">S'inscrire</button>
+            <div class="signin-section-column">
+                <form action="/signin" method="POST">
+                    <h2>Inscription</h2>
+                    <label for="name">
+                        Pseudo
+                        <input type="text" name="name" id="name">
+                    </label>
+                    <label for="email">
+                        Addresse e-mail
+                        <input type="email" name="email" id="email">
+                    </label>
+                    <label for="password">
+                        Mot de passe
+                        <input type="password" name="password" id="password">
+                    </label>
+                    <button class="btn" href="#">S'inscrire</button>
 
-                <span>Déjà inscrit ? <a href="/signup">Connectez-vous</a></span>
-            </form>
+                    <span>Déjà inscrit ? <a href="/signup">Connectez-vous</a></span>
+                </form>
+            </div>
 
-            <img src="/img/sign-in-up.jpg" alt="signin image">
+            <div class="signin-section-column">
+                <img src="/img/sign-in-up.jpg" alt="signin image">
+            </div>
         </section>
     </main>
     <footer class="footer">
