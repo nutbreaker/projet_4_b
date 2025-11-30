@@ -73,22 +73,24 @@
 
                 </div>
 
-                <form class="account-form" action="/account" method="POST">
-                    <h3>Vos informations personnelles</h3>
-                    <label for="email">
-                        Addresse email
-                        <input type="email" name="email" id="email" placeholder="nathalie@gmail.com">
-                    </label>
-                    <label for="password">
-                        Mot de passe
-                        <input type="password" name="password" id="password" placeholder="•••••••••">
-                    </label>
-                    <label for="username">
-                        Pseudo
-                        <input type="text" name="username" id="username" placeholder="nathalire">
-                    </label>
-                    <button class="btn btn-invert" href="#">Enregistrer</button>
-                </form>
+                <div class="account-form-container">
+                    <form class="account-form" action="/account" method="POST">
+                        <h3>Vos informations personnelles</h3>
+                        <label for="email">
+                            Addresse email
+                            <input type="email" name="email" id="email" placeholder="nathalie@gmail.com">
+                        </label>
+                        <label for="password">
+                            Mot de passe
+                            <input type="password" name="password" id="password" placeholder="•••••••••">
+                        </label>
+                        <label for="username">
+                            Pseudo
+                            <input type="text" name="username" id="username" placeholder="nathalire">
+                        </label>
+                        <button class="btn btn-invert" href="#">Enregistrer</button>
+                    </form>
+                </div>
             </div>
         </section>
         <section class="account-books">
