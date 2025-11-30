@@ -14,22 +14,18 @@
     --template-max-width: 144rem;
 
     /* Colors */
-    --bg-color: #F5F3EF;
-    --bg-color-white: #FFFFFF;
-    --section-bg-color: #FAF9F7;
-    --card-bg-color: #FFFFFF;
-    --default-text-color: #292929;
-    --lighter-text-color: #A6A6A6;
-    --dark-text-color: #000000;
-    --btn-color: #00AC66;
-    --btn-color-hover: #006D41;
-    --btn-bg-color: #00AC66;
-    --btn-text-color: #FFFFFF;
-    --color-grey-light: #A6A6A6;
-    --color-grey-dark: #292929;
+    --color-white: #FFFFFF;
+    --color-lightest-gray: #F5F3EF;
+    --color-lighter-gray: #FAF9F7;
+    --color-light-gray: #F0F0F0;
+    --color-dark-gray: #A6A6A6;
+    --color-darkest-gray: #292929;
+    --color-green-light: #00AC66;
+    --color-green-dark: #006D41;
     --color-teal: #6DC5A1;
-    --color-rose: #C56D6D;
-    --color-light-gray: #EDF2F6;
+    --color-black: #000000;
+    --color-light-blue: #EDF2F6;
+    --color-light-red: #C56D6D;
     --color-red: #CB2D2D;
 
     /* Font */
@@ -47,8 +43,8 @@
 }
 
 html {
-    color: var(--default-text-color);
-    background-color: var(--bg-color);
+    color: var(--color-darkest-gray);
+    background-color: var(--color-lightest-gray);
     height: 100dvh;
 }
 
@@ -104,7 +100,7 @@ ul {
 li a {
     font-size: 1.4rem;
     text-decoration: none;
-    color: var(--default-text-color);
+    color: var(--color-darkest-gray);
     transition: all 125ms;
 }
 
@@ -148,21 +144,21 @@ button
     padding: 2.2rem 3.8rem;
     font-size: 1.6rem;
     font-weight: var(--font-inter-weight-bold);
-    color: var(--btn-text-color);
-    background-color: var(--btn-color);
+    color: var(--color-white);
+    background-color: var(--color-green-light);
     border-radius: 1rem;
     transition: all 250ms;
 }
 
 .btn:hover {
-    color: var(--btn-text-color);
-    background-color: var(--btn-color-hover);
+    color: var(--color-white);
+    background-color: var(--color-green-dark);
 }
 
 .btn-invert {
-    color: var(--btn-color);
-    border: solid 1px var(--btn-color);
-    background-color: var(--bg-color);
+    color: var(--color-green-light);
+    border: solid 1px var(--color-green-light);
+    background-color: var(--color-lightest-gray);
 }
 
 /* 
@@ -174,7 +170,7 @@ card
     width: 20rem;
     margin: 0;
     border-radius: 1rem;
-    background: var(--card-bg-color);
+    background: var(--color-white);
 }
 
 .card-img {
@@ -198,12 +194,12 @@ card
 .card-figcaption-subtitle {
     margin: 0;
     font-size: 1.4rem;
-    color: var(--lighter-text-color);
+    color: var(--color-dark-gray);
 }
 
 .card-figcaption-info {
     margin-top: 2.2rem;
-    color: var(--lighter-text-color);
+    color: var(--color-dark-gray);
 }
 
 /* 
@@ -239,9 +235,9 @@ header
     font-weight: var(--font-inter-weight-bold);
     text-shadow: none;
     line-height: 1;
-    color: var(--bg-color);
+    color: var(--color-lightest-gray);
     border-radius: .765rem;
-    background: var(--default-text-color);
+    background: var(--color-darkest-gray);
 }
 
 .header-account {
@@ -302,7 +298,7 @@ hero
     font-style: italic;
     text-align: right;
     font-weight: var(--font-inter-weight-medium);
-    color: var(--lighter-text-color);
+    color: var(--color-dark-gray);
 }
 
 /* 
@@ -315,7 +311,7 @@ latest books
     display: grid;
     justify-content: center;
     justify-items: center;
-    background: var(--section-bg-color);
+    background: var(--color-lighter-gray);
     padding-bottom: 6.4rem;
 }
 
@@ -407,7 +403,7 @@ our values
     font-size: 1.2rem;
     font-style: italic;
     font-weight: var(--font-inter-weight-medium);
-    color: var(--lighter-text-color);
+    color: var(--color-dark-gray);
 }
 
 .our-values-footer-img {
@@ -422,7 +418,7 @@ footer
 ********************************************************************************
 */
 .footer {
-    background: var(--section-bg-color);
+    background: var(--color-lighter-gray);
     height: 6.1rem;
     display: grid;
     place-items: center end;
@@ -449,12 +445,12 @@ pages
     --body-grid-gap: 0;
 
     main {
-        background-color: var(--section-bg-color);
+        background-color: var(--color-lighter-gray);
     }
 
     .footer {
         margin: 0;
-        background-color: var(--bg-color-white);
+        background-color: var(--color-white);
     }
 }
 
@@ -468,7 +464,7 @@ book exchange
     display: grid;
     justify-content: center;
     justify-items: center;
-    background: var(--section-bg-color);
+    background: var(--color-lighter-gray);
     padding-block: 13rem 6.4em;
     padding-inline: 15rem;
 }
@@ -495,7 +491,7 @@ book exchange
     width: 32.2rem;
     padding: 1.6rem 1.2rem;
     font-size: 1.4rem;
-    background: var(--bg-color-white);
+    background: var(--color-white);
     border: solid 1px #f0f0f0;
     border-radius: .6rem;
 }
@@ -538,7 +534,7 @@ book
     max-width: var(--template-max-width);
     padding: 1.5rem 15rem;
     font-size: 1rem;
-    color: var(--lighter-text-color);
+    color: var(--color-dark-gray);
 }
 
 .book-section-figure {
@@ -571,7 +567,7 @@ book
     h3 {
         margin-top: 3.25rem;
         font-size: 0.8rem;
-        color: var(--color-grey-dark);
+        color: var(--color-darkest-gray);
         letter-spacing: 8%;
         font-weight: 600;
         text-transform: uppercase;
@@ -584,7 +580,7 @@ book
 
     h2+span {
         font-size: 1.6rem;
-        color: var(--lighter-text-color);
+        color: var(--color-dark-gray);
         margin-top: 1.6rem;
     }
 
@@ -592,7 +588,7 @@ book
         width: 2.7rem;
         margin-block: 3.25rem 0;
         margin-inline: 0;
-        border: 1px solid var(--color-grey-light);
+        border: 1px solid var(--color-dark-gray);
     }
 
     a {
@@ -601,7 +597,7 @@ book
     }
 
     div {
-        background: var(--bg-color-white);
+        background: var(--color-white);
         display: flex;
         align-items: center;
         gap: 1.55rem;
@@ -620,7 +616,7 @@ book
 
         span {
             font-size: 1.4rem;
-            color: var(--color-grey-dark);
+            color: var(--color-darkest-gray);
             font-weight: 400;
             margin-right: 1.7rem;
         }
@@ -668,13 +664,13 @@ Sign in / Sign up
         gap: 1rem;
         font-size: 1.4rem;
         font-weight: 400;
-        color: var(--color-grey-light);
+        color: var(--color-dark-gray);
     }
 
     input {
         padding: 1.6rem 1.2rem;
         font-size: 1.4rem;
-        background: var(--bg-color-white);
+        background: var(--color-white);
         border: solid 1px #f0f0f0;
         border-radius: .6rem;
     }
@@ -682,11 +678,11 @@ Sign in / Sign up
     span {
         font-size: 1.4rem;
         font-weight: 400;
-        color: var(--color-grey-dark);
+        color: var(--color-darkest-gray);
     }
 
     a {
-        color: var(--color-grey-dark);
+        color: var(--color-darkest-gray);
         text-decoration: underline;
     }
 
@@ -731,7 +727,7 @@ Account
         align-items: center;
         flex: 1 1 0;
         padding: 3.6rem 3.2rem;
-        background-color: var(--bg-color-white);
+        background-color: var(--color-white);
         border-radius: 2rem;
     }
 
@@ -756,13 +752,13 @@ Account
             width: 100%;
             font-size: 1.4rem;
             font-weight: 400;
-            color: var(--color-grey-light);
+            color: var(--color-dark-gray);
         }
 
         input {
             padding: 1.6rem 1.2rem;
             font-size: 1.4rem;
-            background: var(--color-light-gray);
+            background: var(--color-light-blue);
             border: solid 1px #f0f0f0;
             border-radius: .6rem;
         }
@@ -786,7 +782,7 @@ Account
 
     .avatar-label {
         font-size: 1.4rem;
-        color: var(--lighter-text-color);
+        color: var(--color-dark-gray);
         text-decoration: underline;
         cursor: pointer;
     }
@@ -798,20 +794,20 @@ Account
     .account-info-separator {
         width: 24.2rem;
         margin-block: 4.8rem;
-        border: 1px solid var(--bg-color);
+        border: 1px solid var(--color-lightest-gray);
     }
 
     .account-info-title {
         font-size: 2.4rem;
         font-family: var(--font-playfair);
         font-weight: var(--font-playfair-weight);
-        color: var(--color-grey-dark)
+        color: var(--color-darkest-gray)
     }
 
     .account-info-date {
         margin-block: 1.1rem 2.1rem;
         font-size: 1.4rem;
-        color: var(--color-grey-light);
+        color: var(--color-dark-gray);
     }
 
     .account-info-library {
@@ -841,11 +837,11 @@ Account
     max-width: 114rem;
 
     &>div:not(:last-child) {
-        border-bottom: solid 1px var(--bg-color);
+        border-bottom: solid 1px var(--color-lightest-gray);
     }
 
     .account-books-header {
-        background: var(--bg-color-white);
+        background: var(--color-white);
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         text-transform: uppercase;
@@ -860,7 +856,7 @@ Account
         grid-template-columns: repeat(6, 1fr);
         align-items: center;
         font-size: 1.2rem;
-        background: var(--bg-color-white);
+        background: var(--color-white);
         height: 13rem;
         padding-inline: 6.6rem;
 
@@ -881,7 +877,7 @@ Account
         }
 
         &:nth-child(odd) {
-            background: var(--color-light-gray);
+            background: var(--color-light-blue);
         }
 
         .account-book-available,
@@ -895,7 +891,7 @@ Account
         }
 
         .account-book-unavailable {
-            background: var(--color-rose);
+            background: var(--color-light-red);
 
         }
 
@@ -911,7 +907,7 @@ Account
         }
 
         .account-book-edit {
-            color: var(--color-grey-dark);
+            color: var(--color-darkest-gray);
         }
 
         .account-book-delete {
@@ -940,7 +936,7 @@ Profile
         flex-direction: column;
         align-items: center;
         padding: 3.6rem 5rem;
-        background-color: var(--bg-color-white);
+        background-color: var(--color-white);
         border-radius: 2rem;
     }
 
@@ -961,7 +957,7 @@ Profile
 
     .avatar-label {
         font-size: 1.4rem;
-        color: var(--lighter-text-color);
+        color: var(--color-dark-gray);
         text-decoration: underline;
         cursor: pointer;
     }
@@ -969,7 +965,7 @@ Profile
     .profile-info-separator {
         width: 24.2rem;
         margin-block: 4.8rem;
-        border: 1px solid var(--bg-color);
+        border: 1px solid var(--color-lightest-gray);
         margin-inline: 0;
     }
 
@@ -977,13 +973,13 @@ Profile
         font-size: 2.4rem;
         font-family: var(--font-playfair);
         font-weight: var(--font-playfair-weight);
-        color: var(--color-grey-dark)
+        color: var(--color-darkest-gray)
     }
 
     .profile-info-date {
         margin-block: 1.1rem 2.1rem;
         font-size: 1.4rem;
-        color: var(--color-grey-light);
+        color: var(--color-dark-gray);
     }
 
     .profile-info-library {
@@ -1022,11 +1018,11 @@ Profile
     overflow: hidden;
 
     &>div:not(:last-child) {
-        border-bottom: solid 1px var(--bg-color);
+        border-bottom: solid 1px var(--color-lightest-gray);
     }
 
     .profile-books-header {
-        background: var(--bg-color-white);
+        background: var(--color-white);
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         text-transform: uppercase;
@@ -1041,7 +1037,7 @@ Profile
         grid-template-columns: repeat(4, 1fr);
         align-items: center;
         font-size: 1.2rem;
-        background: var(--bg-color-white);
+        background: var(--color-white);
         height: 13rem;
         padding-inline: 6.6rem;
 
@@ -1062,7 +1058,7 @@ Profile
         }
 
         &:nth-child(odd) {
-            background: var(--color-light-gray);
+            background: var(--color-light-blue);
         }
 
         .profile-book-available,
@@ -1076,7 +1072,7 @@ Profile
         }
 
         .profile-book-unavailable {
-            background: var(--color-rose);
+            background: var(--color-light-red);
 
         }
 
@@ -1092,7 +1088,7 @@ Profile
         }
 
         .profile-book-edit {
-            color: var(--color-grey-dark);
+            color: var(--color-darkest-gray);
         }
 
         .profile-book-delete {
@@ -1109,11 +1105,11 @@ Profile
     max-width: var(--template-max-width);
     padding: 3rem 15rem 9.2rem;
     font-size: 1rem;
-    color: var(--lighter-text-color);
+    color: var(--color-dark-gray);
 
     h2 {
         font-size: 2.6rem;
-        color: var(--dark-text-color);
+        color: var(--color-black);
         text-align: unset;
         margin-block: 2.3rem;
     }
@@ -1133,7 +1129,7 @@ Profile
         width: max-content;
         gap: .4rem;
         font-size: 1.4rem;
-        color: var(--lighter-text-color);
+        color: var(--color-dark-gray);
         line-height: 1;
 
         &::before {
@@ -1147,7 +1143,7 @@ Profile
         flex-wrap: wrap;
         gap: 11.8rem;
         border-radius: 2rem;
-        background-color: var(--bg-color-white);
+        background-color: var(--color-white);
         padding-block: 5.6rem;
         padding-inline: 5rem;
     }
@@ -1166,7 +1162,7 @@ Profile
 
     .edit-book-image-label {
         font-size: 1.4rem;
-        color: var(--color-grey-dark);
+        color: var(--color-darkest-gray);
         text-decoration: underline;
         text-transform: capitalize;
         cursor: pointer;
@@ -1191,7 +1187,7 @@ Profile
             gap: 1rem;
             font-size: 1.4rem;
             font-weight: 400;
-            color: var(--color-grey-light);
+            color: var(--color-dark-gray);
         }
 
         input,
@@ -1199,7 +1195,7 @@ Profile
         select {
             padding: 1.6rem 1.2rem;
             font-size: 1.4rem;
-            background: var(--color-light-gray);
+            background: var(--color-light-blue);
             border: solid 1px #f0f0f0;
             border-radius: .6rem;
         }
@@ -1235,7 +1231,7 @@ Profile
         width: 30.8rem;
         height: 100%;
         align-self: start;
-        background-color: var(--section-bg-color);
+        background-color: var(--color-lighter-gray);
 
         h2 {
             margin-block: 5.5rem 2.7rem;
@@ -1260,7 +1256,7 @@ Profile
         }
 
         .chat-active {
-            background-color: var(--bg-color-white);
+            background-color: var(--color-white);
         }
 
         .chat-user {
@@ -1281,7 +1277,7 @@ Profile
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 1;
             font-size: 1.2rem;
-            color: var(--color-grey-light);
+            color: var(--color-dark-gray);
         }
     }
 
@@ -1319,7 +1315,7 @@ Profile
         .message-sent {
             p {
                 padding: 1rem 1.8rem;
-                color: var(--color-grey-dark);
+                color: var(--color-darkest-gray);
                 font-size: 1.2rem;
                 font-weight: 400;
                 border-radius: .3rem;
@@ -1335,7 +1331,7 @@ Profile
             }
 
             p {
-                background-color: var(--bg-color-white);
+                background-color: var(--color-white);
             }
         }
 
@@ -1348,14 +1344,14 @@ Profile
         .message-time {
             font-size: 1.2rem;
             font-weight: 400;
-            color: var(--color-grey-light);
+            color: var(--color-dark-gray);
         }
 
         .message-sent {
             align-self: end;
 
             p {
-                background-color: var(--color-light-gray);
+                background-color: var(--color-light-blue);
             }
         }
 
@@ -1370,7 +1366,7 @@ Profile
                 flex: 1 1 auto;
                 padding: 1.6rem 1.2rem;
                 font-size: 1.4rem;
-                background: var(--bg-color-white);
+                background: var(--color-white);
                 border: solid 1px #f0f0f0;
                 border-radius: .6rem;
             }
