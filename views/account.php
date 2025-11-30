@@ -94,43 +94,74 @@
             </div>
         </section>
         <section class="account-books">
-            <div class="account-books-header">
-                <span>photo</span>
-                <span>titre</span>
-                <span>auteur</span>
-                <span>description</span>
-                <span>disponibilité</span>
-                <span>action</span>
-            </div>
-            <div class="account-book">
-                <img src="/img/the_kinkfolk_table.jpg" alt="The Kinkfolk Table">
-                <span>The Kinkfolk Table</span>
-                <span>Nathan Williams</span>
-                <span>J'ai récemment plongé dans les pages de 'The Kinfolk Table' et j'ai été enchanté par cette œuvre captivante. Ce livre va bien au-delà d'une simple collection de recettes ; il célèbre l'art de partager des moments authentiques autour de la table.
+            <table class="books-table">
+                <thead>
+                    <tr class="books-table-header">
+                        <th>photo</th>
+                        <th>titre</th>
+                        <th>auteur</th>
+                        <th>description</th>
+                        <th>disponibilité</th>
+                        <th>action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="books-table-row">
+                        <td><img src="/img/the_kinkfolk_table.jpg" alt="The Kinkfolk Table"></td>
+                        <td>The Kinkfolk Table</td>
+                        <td>Nathan Williams</td>
+                        <td>J'ai récemment plongé dans les pages de 'The Kinfolk Table' et j'ai été enchanté par cette œuvre
+                            captivante. Ce livre va bien au-delà d'une simple collection de recettes ; il célèbre l'art de partager
+                            des
+                            moments authentiques autour de la table.
 
-                    Les photographies magnifiques et le ton chaleureux captivent dès le départ, transportant le lecteur dans un voyage à travers des recettes et des histoires qui mettent en avant la beauté de la simplicité et de la convivialité.
+                            Les photographies magnifiques et le ton chaleureux captivent dès le départ, transportant le lecteur dans
+                            un
+                            voyage à travers des recettes et des histoires qui mettent en avant la beauté de la simplicité et de la
+                            convivialité.
 
-                    Chaque page est une invitation à ralentir, à savourer et à créer des souvenirs durables avec les êtres chers.
+                            Chaque page est une invitation à ralentir, à savourer et à créer des souvenirs durables avec les êtres
+                            chers.
 
-                    'The Kinfolk Table' incarne parfaitement l'esprit de la cuisine et de la camaraderie, et il est certain que ce livre trouvera une place spéciale dans le cœur de tout amoureux de la cuisine et des rencontres inspirantes.</span>
-                <span class="account-book-available">disponible</span>
-                <span class="account-book-action"><a class="account-book-edit" href="/edit?id=1">éditer</a> <a class="account-book-delete" href="#">supprimer</a></span>
-            </div>
+                            'The Kinfolk Table' incarne parfaitement l'esprit de la cuisine et de la camaraderie, et il est certain
+                            que
+                            ce livre trouvera une place spéciale dans le cœur de tout amoureux de la cuisine et des rencontres
+                            inspirantes.</td>
+                        <td><span class="books-table-available">disponible</span></td>
+                        <td class="books-table-action">
+                            <a class="books-table-edit" href="edit">éditer</a> <a class="books-table-delete" href="#">supprimer</a>
+                        </td>
+                    </tr>
 
-            <div class="account-book">
-                <img src="/img/the_kinkfolk_table.jpg" alt="The Kinkfolk Table">
-                <span>The Kinkfolk Table</span>
-                <span>Nathan Williams</span>
-                <span>J'ai récemment plongé dans les pages de 'The Kinfolk Table' et j'ai été enchanté par cette œuvre captivante. Ce livre va bien au-delà d'une simple collection de recettes ; il célèbre l'art de partager des moments authentiques autour de la table.
+                    <tr class="books-table-row">
+                        <td><img src="/img/the_kinkfolk_table.jpg" alt="The Kinkfolk Table"></td>
+                        <td>The Kinkfolk Table</td>
+                        <td>Nathan Williams</td>
+                        <td>J'ai récemment plongé dans les pages de 'The Kinfolk Table' et j'ai été enchanté par cette œuvre
+                            captivante. Ce livre va bien au-delà d'une simple collection de recettes ; il célèbre l'art de partager
+                            des
+                            moments authentiques autour de la table.
 
-                    Les photographies magnifiques et le ton chaleureux captivent dès le départ, transportant le lecteur dans un voyage à travers des recettes et des histoires qui mettent en avant la beauté de la simplicité et de la convivialité.
+                            Les photographies magnifiques et le ton chaleureux captivent dès le départ, transportant le lecteur dans
+                            un
+                            voyage à travers des recettes et des histoires qui mettent en avant la beauté de la simplicité et de la
+                            convivialité.
 
-                    Chaque page est une invitation à ralentir, à savourer et à créer des souvenirs durables avec les êtres chers.
+                            Chaque page est une invitation à ralentir, à savourer et à créer des souvenirs durables avec les êtres
+                            chers.
 
-                    'The Kinfolk Table' incarne parfaitement l'esprit de la cuisine et de la camaraderie, et il est certain que ce livre trouvera une place spéciale dans le cœur de tout amoureux de la cuisine et des rencontres inspirantes.</span>
-                <span class="account-book-unavailable">non dispo.</span>
-                <span class="account-book-action"><a class="account-book-edit" href="#">éditer</a> <a class="account-book-delete" href="#">supprimer</a></span>
-            </div>
+                            'The Kinfolk Table' incarne parfaitement l'esprit de la cuisine et de la camaraderie, et il est certain
+                            que
+                            ce livre trouvera une place spéciale dans le cœur de tout amoureux de la cuisine et des rencontres
+                            inspirantes.</td>
+                        <td>
+                <span class="books-table-unavailable">non dispo.</span></td>
+                        <td class="books-table-action">
+                            <a class="books-table-edit" href="edit">éditer</a> <a class="books-table-delete" href="#">supprimer</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </main>
     <footer class="footer">
