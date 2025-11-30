@@ -202,6 +202,96 @@ card
     color: var(--color-dark-gray);
 }
 
+/*
+********************************************************************************
+books-table
+********************************************************************************
+*/
+.books-table {
+    width: 100%;
+}
+
+.books-table-header {
+    background: var(--color-white);
+    display: grid;
+    grid-auto-flow: column;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 8%;
+    font-weight: bold;
+    padding-block: 3.424rem .829rem;
+    padding-inline: 6.6rem;
+}
+
+.books-table-row {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
+    font-size: 1.2rem;
+    background: var(--color-white);
+    height: 13rem;
+    padding-inline: 6.6rem;
+
+    img {
+        width: 7.8rem;
+        aspect-ratio: 1;
+        object-fit: cover;
+        object-position: 0 bottom;
+    }
+
+    td:nth-child(4) {
+        display: -webkit-box;
+        max-width: 12.8rem;
+        overflow: hidden;
+        font-style: italic;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+    }
+
+    &:nth-child(odd) {
+        background: var(--color-light-blue);
+    }
+
+    .books-table-available,
+    .books-table-unavailable {
+        background-color: var(--color-teal);
+        color: white;
+        width: fit-content;
+        padding: .37rem 1.3rem;
+        border-radius: 15%/50%;
+        font-weight: 500;
+    }
+
+    .books-table-unavailable {
+        background: var(--color-light-red);
+
+    }
+
+    .books-table-action {
+        display: flex;
+        gap: 2.8rem;
+    }
+
+    .books-table-edit,
+    .books-table-delete {
+        text-transform: capitalize;
+        text-decoration: underline;
+    }
+
+    .books-table-edit {
+        color: var(--color-darkest-gray);
+    }
+
+    .books-table-delete {
+        color: var(--color-red);
+    }
+}
+
+.books-table-header,
+.books-table-row:not(:last-child) {
+    border-bottom: solid 1px var(--color-lightest-gray);
+}
+
 /* 
 ********************************************************************************
 header
@@ -836,83 +926,9 @@ Account
     overflow: hidden;
     max-width: 114rem;
 
-    &>div:not(:last-child) {
-        border-bottom: solid 1px var(--color-lightest-gray);
-    }
-
-    .account-books-header {
-        background: var(--color-white);
-        display: grid;
+    .books-table-header,
+    .books-table-row {
         grid-template-columns: repeat(6, 1fr);
-        text-transform: uppercase;
-        letter-spacing: 8%;
-        font-weight: bold;
-        padding-block: 3.424rem .829rem;
-        padding-inline: 6.6rem;
-    }
-
-    .account-book {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        align-items: center;
-        font-size: 1.2rem;
-        background: var(--color-white);
-        height: 13rem;
-        padding-inline: 6.6rem;
-
-        img {
-            width: 7.8rem;
-            aspect-ratio: 1;
-            object-fit: cover;
-            object-position: 0 bottom;
-        }
-
-        span:nth-child(4) {
-            display: -webkit-box;
-            max-width: 12.8rem;
-            overflow: hidden;
-            font-style: italic;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 4;
-        }
-
-        &:nth-child(odd) {
-            background: var(--color-light-blue);
-        }
-
-        .account-book-available,
-        .account-book-unavailable {
-            background-color: var(--color-teal);
-            color: white;
-            width: fit-content;
-            padding: .37rem 1.3rem;
-            border-radius: 15%/50%;
-            font-weight: 500;
-        }
-
-        .account-book-unavailable {
-            background: var(--color-light-red);
-
-        }
-
-        .account-book-action {
-            display: flex;
-            gap: 2.8rem;
-        }
-
-        .account-book-edit,
-        .account-book-delete {
-            text-transform: capitalize;
-            text-decoration: underline;
-        }
-
-        .account-book-edit {
-            color: var(--color-darkest-gray);
-        }
-
-        .account-book-delete {
-            color: var(--color-red);
-        }
     }
 }
 
@@ -1016,85 +1032,6 @@ Profile
     height: max-content;
     border-radius: 2rem;
     overflow: hidden;
-
-    &>div:not(:last-child) {
-        border-bottom: solid 1px var(--color-lightest-gray);
-    }
-
-    .profile-books-header {
-        background: var(--color-white);
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        text-transform: uppercase;
-        letter-spacing: 8%;
-        font-weight: bold;
-        padding-block: 3.424rem .829rem;
-        padding-inline: 6.6rem;
-    }
-
-    .profile-book {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        align-items: center;
-        font-size: 1.2rem;
-        background: var(--color-white);
-        height: 13rem;
-        padding-inline: 6.6rem;
-
-        img {
-            width: 7.8rem;
-            aspect-ratio: 1;
-            object-fit: cover;
-            object-position: 0 bottom;
-        }
-
-        span:nth-child(4) {
-            display: -webkit-box;
-            max-width: 12.8rem;
-            overflow: hidden;
-            font-style: italic;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 4;
-        }
-
-        &:nth-child(odd) {
-            background: var(--color-light-blue);
-        }
-
-        .profile-book-available,
-        .profile-book-unavailable {
-            background-color: var(--color-teal);
-            color: white;
-            width: fit-content;
-            padding: .37rem 1.3rem;
-            border-radius: 15%/50%;
-            font-weight: 500;
-        }
-
-        .profile-book-unavailable {
-            background: var(--color-light-red);
-
-        }
-
-        .profile-book-action {
-            display: flex;
-            gap: 2.8rem;
-        }
-
-        .profile-book-edit,
-        .profile-book-delete {
-            text-transform: capitalize;
-            text-decoration: underline;
-        }
-
-        .profile-book-edit {
-            color: var(--color-darkest-gray);
-        }
-
-        .profile-book-delete {
-            color: var(--color-red);
-        }
-    }
 }
 
 .edit-book-container {
