@@ -12,31 +12,39 @@
 
 <body class="signin">
     <header>
-        <h1>
-            <a href="/">
-                <img src="/img/logo.svg" alt="logo">
-            </a>
-        </h1>
-        <nav>
-            <ul class="header-menu">
-                <li>
-                    <a href="/">Accueil</a>
-                </li>
-                <li>
-                    <a href="/books">Nos livres à l'échange</a>
-                </li>
-                <li>
-                    <a class="header-chat" href="/chat">Messagerie <span class="header-chat-notification">1</span></a>
-                </li>
-                <li>
-                    <a class="header-account" href="/account">Mon compte</a>
-                </li>
-                <li>
-                    <a href="/signin">Connexion</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <h1>
+                <a href="/">
+                    <img src="/img/logo.svg" alt="logo">
+                </a>
+            </h1>
+
+            <button class="header-nav-button" commandfor="header-nav" command="toggle-popover">
+                <img src="img/icon_menu.svg" alt="Menu button">
+            </button>
+
+            <nav popover id="header-nav" class="header-nav">
+                <ul class="header-menu">
+                    <li>
+                        <a href="/">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="/books">Nos livres à l'échange</a>
+                    </li>
+                    <li>
+                        <a class="header-chat" href="/chat">Messagerie <span class="header-chat-notification">1</span></a>
+                    </li>
+                    <li>
+                        <a class="header-account" href="/account">Mon compte</a>
+                    </li>
+                    <li>
+                        <a href="/signin">Connexion</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
         <section class="signin-section">
             <div class="signin-section-column">
@@ -65,7 +73,7 @@
             </div>
         </section>
     </main>
-    <footer class="footer">
+    <footer>
         <nav>
             <ul class="footer-menu">
                 <li><a>Politique de confidentialité</a></li>
