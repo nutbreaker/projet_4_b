@@ -57,7 +57,9 @@ body {
     margin: 0;
 }
 
-header, main, footer {
+header,
+main,
+footer {
     width: var(--template-width);
     max-width: var(--template-max-width);
 }
@@ -104,7 +106,9 @@ li a:focus-visible {
     text-shadow: 1px 0 0 currentColor;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin: 0;
 }
 
@@ -584,12 +588,17 @@ book exchange
 */
 
 .book-exchange {
-    display: grid;
+    display: flex;
     justify-content: center;
-    justify-items: center;
     background: var(--color-lighter-gray);
-    padding-block: 13rem 6.4em;
-    padding-inline: 15rem;
+}
+
+.book-exchange-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 13rem 6.4em;
+    margin-inline: 2rem;
 }
 
 .book-exchange-header {
@@ -629,19 +638,6 @@ book exchange
     width: 100%;
     align-self: baseline;
     font-size: 1.4rem;
-}
-
-.book-exchange-cards {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
-    gap: 3.8rem;
-    max-width: min(92rem, 100%);
-    margin-block: 8rem 4.8rem;
-
-    .card {
-        width: unset;
-    }
 }
 
 /*
@@ -1534,6 +1530,31 @@ Profile
     .our-values-footer-img {
         position: unset;
         align-self: center;
+    }
+
+    /*
+    ****************************************************************************
+    books
+    ****************************************************************************
+    */
+
+    .book-exchange-container {
+        gap: 1rem;
+        margin-block: 5rem;
+    }
+
+    .book-exchange-header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .book-exchange-title {
+        font-size: 3rem;
+        text-align: start;
+    }
+
+    .book-exchange-search {
+        width: 100%;
     }
 
     /*
