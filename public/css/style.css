@@ -754,7 +754,6 @@ Sign in / Sign up
 .signin-section,
 .signup-section {
     display: flex;
-    flex-wrap: wrap;
     gap: 10rem 0;
     margin: 0;
 
@@ -814,10 +813,6 @@ Sign in / Sign up
         justify-content: center;
         align-items: center;
         flex: 1 1 50%;
-    }
-
-    .btn {
-        border: none;
     }
 }
 
@@ -1628,6 +1623,24 @@ Chat
         margin-block: 1.9rem;
 
         .btn {
+            width: 100%;
+        }
+    }
+
+    /*
+    ****************************************************************************
+    Signin/signup
+    ****************************************************************************
+    */
+
+    .signin-section, .signup-section {
+        flex-direction: column;
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        form, .btn {
             width: 100%;
         }
     }
