@@ -9,7 +9,7 @@
 }
 
 :root {
-    /* template */
+    /* Template */
     --template-width: 100%;
     --template-max-width: 144rem;
 
@@ -40,6 +40,8 @@
     font-size: 10px;
     font-family: var(--font-inter);
     font-weight: var(--font-inter-weight);
+
+    scrollbar-color: var(--color-green-dark) transparent;
 }
 
 html {
@@ -51,46 +53,39 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: var(--body-grid-gap, 8rem);
     margin: 0;
 }
 
-header {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem 7.8rem;
+header, main, footer {
     width: var(--template-width);
     max-width: var(--template-max-width);
-    padding: 1.5em 15rem;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-lightest-gray);
+    z-index: 1;
 }
 
 main {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: var(--template-width);
-    max-width: var(--template-max-width);
 }
 
 footer {
-    width: var(--template-width);
-    max-width: var(--template-max-width);
-    margin-top: 8rem;
+    background-color: var(--color-white);
 }
 
 section {
     width: var(--template-width);
 }
 
-nav {
-    flex: 1 1 62rem;
-}
-
 ul {
     display: flex;
+    align-items: center;
     gap: 4.2rem;
     margin: 0;
     padding: 0;
@@ -109,20 +104,15 @@ li a:focus-visible {
     text-shadow: 1px 0 0 currentColor;
 }
 
-h1 {
+h1, h2, h3 {
     margin: 0;
 }
 
 h2 {
-    margin-block: 8rem 0;
     font-size: 3.2rem;
     font-family: var(--font-playfair);
     font-weight: var(--font-playfair-weight);
     text-align: center;
-}
-
-h3 {
-    margin: 0;
 }
 
 p {
@@ -139,11 +129,12 @@ a {
 button
 ********************************************************************************
 */
-
 .btn {
+    width: fit-content;
     padding: 2.2rem 3.8rem;
     font-size: 1.6rem;
     font-weight: var(--font-inter-weight-bold);
+    text-align: center;
     color: var(--color-white);
     background-color: var(--color-green-light);
     border-radius: 1rem;
@@ -166,8 +157,25 @@ button
 card
 ********************************************************************************
 */
+.card-container {
+    --card-container-columns: 4;
+    --card-container-gap: 3.8rem;
+    --card-container-mb: 8rem 4.8rem;
+    --card-figcaption-gap: .8rem;
+    --card-figcaption-padding: 1.9rem 1.4rem;
+    --card-figcaption-title-font-size: 1.6rem;
+    --card-figcaption-subtile-font-size: 1.4rem;
+    --card-figcaption-info-font-size: 1rem;
+    --card-figcaption-info-mt: 2.2rem;
+
+    display: grid;
+    grid-template-columns: repeat(var(--card-container-columns),
+            minmax(13rem, 20rem));
+    gap: var(--card-container-gap);
+    margin-block: var(--card-container-mb);
+}
+
 .card {
-    width: 20rem;
     margin: 0;
     border-radius: 1rem;
     background: var(--color-white);
@@ -182,23 +190,24 @@ card
 .card-figcaption {
     display: flex;
     flex-direction: column;
-    gap: .8rem;
-    padding: 1.9rem 1.4rem;
+    gap: var(--card-figcaption-gap);
+    padding: var(--card-figcaption-padding);
 }
 
 .card-figcaption-title {
-    font-size: 1.6rem;
+    font-size: var(--card-figcaption-title-font-size);
     font-weight: 400;
 }
 
 .card-figcaption-subtitle {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: var(--card-figcaption-subtile-font-size);
     color: var(--color-dark-gray);
 }
 
 .card-figcaption-info {
-    margin-top: 2.2rem;
+    margin-top: var(--card-figcaption-info-mt);
+    font-size: var(--card-figcaption-info-font-size);
     color: var(--color-dark-gray);
 }
 
@@ -297,6 +306,35 @@ books-table
 header
 ********************************************************************************
 */
+
+.header-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem 7.8rem;
+    margin: 1.5em clamp(2rem, 5vw, 15rem);
+
+    a {
+        img {
+            width: 15.5rem;
+        }
+    }
+
+}
+
+.header-nav {
+    all: unset;
+    flex: 1 1 64rem;
+}
+
+.header-nav-button {
+    display: none;
+    margin-left: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .header-menu {
     flex-wrap: wrap;
     text-wrap: nowrap;
@@ -346,18 +384,16 @@ header
 hero
 ********************************************************************************
 */
-.hero {
+.hero-container {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 10.8rem;
-    margin-block: 0 12.8rem;
+    gap: var(--hero-container-gap, 10.5rem);
+    margin-block: var(--hero-container-mb, 8rem 12.8rem);
+    margin-inline: 2rem;
 }
 
 .hero-content {
-    display: grid;
-    justify-items: start;
     max-width: 32.9rem;
     margin-top: 5.2rem;
 }
@@ -398,19 +434,17 @@ latest books
 */
 
 .latest-books {
-    display: grid;
-    justify-content: center;
-    justify-items: center;
     background: var(--color-lighter-gray);
-    padding-bottom: 6.4rem;
 }
 
-.latest-books-cards {
+.latest-books-container {
+    --latest-books-container-mb: 8rem 6.4rem;
+
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3.8rem;
-    margin-block: 8rem 4.8rem;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 2rem;
+    margin-block: var(--latest-books-container-mb);
 }
 
 /* 
@@ -418,33 +452,37 @@ latest books
 how it works
 ********************************************************************************
 */
-.how-it-works {
-    display: grid;
-    place-items: center;
-    padding-bottom: 8rem;
+.how-it-works-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 2rem;
+    margin-block: 8rem;
 }
 
 .how-it-works-description {
-    width: 39.7rem;
+    max-width: 39.7rem;
     margin-block: 2.4rem;
     text-align: center;
 }
 
 .how-it-works-list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(16rem, 21.5rem));
     justify-content: center;
     gap: 3.6rem;
     margin-block: 1.6rem 4.8rem;
 }
 
 .how-it-works-item {
+    display: flex;
+    align-items: center;
     max-width: 21.5rem;
     padding: 4.4rem 1.8rem;
-    border-radius: 1rem;
-    background: white;
     font-size: 1.4rem;
     text-align: center;
+    border-radius: 1rem;
+    background: white;
 }
 
 /* 
@@ -458,7 +496,7 @@ strech
 
 .strech-img {
     width: 100%;
-    height: 23rem;
+    max-height: 23rem;
     object-fit: cover;
     object-position: 0 40%;
 }
@@ -468,11 +506,13 @@ strech
 our values
 ********************************************************************************
 */
-.our-values {
-    display: grid;
-    justify-content: center;
-    justify-items: start;
-    grid-auto-columns: 39.2rem;
+.our-values-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 90%;
+    max-width: 39.2rem;
+    margin: 8rem auto 16rem auto;
 }
 
 .our-values-title {
@@ -486,7 +526,7 @@ our values
 .our-values-footer {
     width: 100%;
     position: relative;
-    padding-top: 2.3rem;
+    margin-top: 2.3rem;
 }
 
 .our-values-footer-content {
@@ -507,16 +547,14 @@ our values
 footer
 ********************************************************************************
 */
-.footer {
-    background: var(--color-lighter-gray);
-    height: 6.1rem;
-    display: grid;
-    place-items: center end;
-    padding-right: 2.64rem;
-}
-
 .footer-menu {
     justify-content: end;
+    align-items: center;
+    margin: 2.3rem 2.64rem;
+
+    a {
+        font-size: 1.2rem;
+    }
 }
 
 /*
@@ -536,11 +574,6 @@ pages
 
     main {
         background-color: var(--color-lighter-gray);
-    }
-
-    .footer {
-        margin: 0;
-        background-color: var(--color-white);
     }
 }
 
@@ -1147,7 +1180,6 @@ Profile
 }
 
 .chat {
-    /* gap: 0 var(--body-grid-gap, 8em); */
     gap: 0;
     margin: 0;
     height: 100%;
@@ -1158,10 +1190,6 @@ Profile
         flex-wrap: wrap;
         align-items: start;
         padding: 1.5rem 15rem 0;
-    }
-
-    .footer {
-        margin-top: 0;
     }
 
     .chat-user-list {
@@ -1312,5 +1340,209 @@ Profile
                 border: none;
             }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.8rem;
+    }
+
+    p {
+        font-size: 1.4rem;
+    }
+
+    /*
+    ****************************************************************************
+    card
+    ****************************************************************************
+    */
+
+    .card-container {
+        --card-container-columns: 2;
+        --card-container-gap: 1.5rem;
+        --card-container-mb: 3.4rem 0;
+        --card-figcaption-gap: .56rem;
+        --card-figcaption-padding: 1.6rem 1.2rem 1.8rem;
+        --card-figcaption-title-font-size: 1.3rem;
+        --card-figcaption-subtile-font-size: 1.2rem;
+        --card-figcaption-info-font-size: .8rem;
+        --card-figcaption-info-mt: 1.8rem;
+    }
+
+    /*
+    ****************************************************************************
+    header
+    ****************************************************************************
+    */
+    .header-container {
+        flex-wrap: nowrap;
+        gap: 1rem;
+        margin-inline: 2rem;
+
+        a {
+            img {
+                width: 10rem;
+            }
+        }
+    }
+
+    .header-nav-button {
+        display: block;
+    }
+
+    .header-nav {
+        display: revert;
+        position: fixed;
+        width: 100%;
+        height: 100dvh;
+        left: 0;
+        top: 6rem;
+        background-color: var(--color-lightest-gray);
+    }
+
+    .header-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-menu li:nth-child(3) {
+        margin-left: unset;
+    }
+
+    /*
+    ****************************************************************************
+    hero
+    ****************************************************************************
+    */
+    .hero-container {
+        --hero-container-gap: 3.2rem;
+        --hero-container-mb: 0 4.8rem;
+        flex-direction: column-reverse;
+        margin-inline: unset;
+    }
+
+    .hero-content {
+        max-width: 41.5rem;
+        margin-top: unset;
+        margin-inline: 2rem;
+
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-figcaption {
+        margin-inline: 2.6rem;
+    }
+
+    .hero-img {
+        max-width: 41.5rem;
+    }
+
+    /*
+    ****************************************************************************
+    latest books
+    ****************************************************************************
+    */
+    .latest-books {
+        .btn {
+            display: none;
+        }
+    }
+
+    .latest-books-container {
+        --latest-books-container-mb: 4.8rem 8rem;
+    }
+
+    /*
+    ****************************************************************************
+    how it works
+    ****************************************************************************
+    */
+    .how-it-works {
+        .btn {
+            width: 100%;
+        }
+    }
+
+    .how-it-works-container {
+        width: 90%;
+        max-width: 41.5rem;
+        margin-block: 4.8rem;
+        margin-inline: auto;
+    }
+
+    .how-it-works-description {
+        margin-block: 1.6rem 0;
+    }
+
+    .how-it-works-list {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+        margin-block: 3.2rem;
+    }
+
+    .how-it-works-item {
+        display: flex;
+        justify-content: center;
+        max-width: 41.5rem;
+
+        br {
+            display: none;
+        }
+    }
+
+    /*
+    ****************************************************************************
+    strech
+    ****************************************************************************
+    */
+    .strech-img {
+        aspect-ratio: 3/4;
+        object-position: 85%;
+        max-height: 42.5rem;
+    }
+
+    /*
+    ****************************************************************************
+    our values
+    ****************************************************************************
+    */
+    .our-values-container {
+        margin-block: 3.2rem
+    }
+
+    .our-values-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 6.2rem;
+        margin-top: 1.2rem;
+    }
+
+    .our-values-footer-content {
+        font-size: 1.2rem;
+        font-style: italic;
+        font-weight: var(--font-inter-weight-medium);
+        color: var(--color-dark-gray);
+    }
+
+    .our-values-footer-img {
+        position: unset;
+        align-self: center;
+    }
+
+    /*
+    ****************************************************************************
+    footer
+    ****************************************************************************
+    */
+    .footer-menu {
+        flex-direction: column;
+        gap: 2rem;
     }
 }
