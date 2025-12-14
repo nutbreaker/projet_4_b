@@ -853,7 +853,7 @@ Account
 
 .account-container {
     width: var(--template-width);
-    max-width: 114rem;
+    max-width: var(--container-max-width);
 }
 
 .account-admin,
@@ -1194,10 +1194,15 @@ Profile
 Chat
 ********************************************************************************
 */
+main:has(.chat-container) {
+    background-color: var(--color-lightest-gray);
+}
+
 .chat-container {
     display: flex;
     width: 100%;
-    padding: 1.5em clamp(2rem, 5vw, 15rem) 0;
+    max-width: var(--container-max-width);
+    padding: 1.5em 2rem 0;
     flex-grow: 1;
 }
 
