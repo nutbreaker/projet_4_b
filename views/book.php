@@ -69,11 +69,14 @@
                     <p>'The Kinfolk Table' incarne parfaitement l'esprit de la cuisine et de la camaraderie, et il est certain que ce livre trouvera une place spéciale dans le cœur de tout amoureux de la cuisine et des rencontres inspirantes.</p>
 
                     <h3>Propriétaire</h3>
-                    <div>
-                        <img src="/img/alexlecture.jpg" alt="Alexlecture" ><span>Alexlecture</span>
-                    </div>
+                    <a class="book-owner" href="/profile">
+                        <div>
+                            <img src="/img/alexlecture.jpg" alt="Alexlecture">
+                        </div>
+                        <span>Alexlecture</span>
+                    </a>
 
-                    <a class="btn" href="#">Envoyer un message</a>
+                    <a class="btn" href="/chat">Envoyer un message</a>
                 </figcaption>
             </figure>
 
