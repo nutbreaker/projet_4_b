@@ -66,12 +66,9 @@ footer {
 }
 
 header {
-    position: sticky;
-    top: 0;
     width: var(--template-width);
     max-width: var(--container-max-width);
     background-color: var(--color-lightest-gray);
-    z-index: 1;
 }
 
 main {
@@ -1368,6 +1365,12 @@ main:has(.chat-container) {
 }
 
 @media (max-width: 768px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
     h2 {
         font-size: 2.8rem;
     }
