@@ -143,7 +143,7 @@
                             </td>
                         </tr>
 
-                        <tr class="books-table-row table-row">
+                        <tr class="table-row">
                             <td class="table-row-picture"><img class="table-row-img" src="/img/the_kinkfolk_table.jpg" alt="The Kinkfolk Table"></td>
                             <td class="table-row-title">The Kinkfolk Table</td>
                             <td class="table-row-author">Nathan Williams</td>
