@@ -393,11 +393,24 @@ header
     content: url(/img/account.svg);
 }
 
+/*
+********************************************************************************
+
+********************************************************************************
+*/
+.hero,
+.how-it-works,
+.our-values,
+.chat-container {
+    background-color: var(--color-lightest-gray);
+}
+
 /* 
 ********************************************************************************
 hero
 ********************************************************************************
 */
+
 .hero-container {
     display: flex;
     align-items: center;
@@ -1169,8 +1182,7 @@ Chat
 
 .chat-user-list {
     width: 30.8rem;
-    height: 100%;
-    align-self: start;
+    align-self: stretch;
     background-color: var(--color-lighter-gray);
 
     h2 {
@@ -1230,7 +1242,6 @@ Chat
 .chat-window {
     display: flex;
     flex-direction: column;
-    height: 100%;
     flex: 1 1 33.5rem;
     padding: 3.5rem 0 3.5rem 4.4rem;
 
