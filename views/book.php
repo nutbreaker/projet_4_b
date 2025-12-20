@@ -76,7 +76,7 @@
                         <span>Alexlecture</span>
                     </a>
 
-                    <a class="btn" href="/chat">Envoyer un message</a>
+                    <a class="book-send-message btn" href="/chat">Envoyer un message</a>
                 </figcaption>
             </figure>
 
