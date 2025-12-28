@@ -2,6 +2,7 @@
 require_once('../config/autoload.php');
 
 use tomtroc\controllers\SigninController;
+use tomtroc\controllers\SignoutController;
 use tomtroc\controllers\SignupController;
 use tomtroc\repositories\UserRepository;
 use tomtroc\services\AuthenticationService;
@@ -22,6 +23,7 @@ $authenticationService = new AuthenticationService($sessionService, $userReposit
 
 //Controllers
 $signinController = new SigninController($viewService, $authenticationService);
+$signoutController = new SignoutController($authenticationService);
 $signupController = new SignupController($viewService, $userRepository);
 
 try {
@@ -30,6 +32,7 @@ try {
 
     match ($urlPath) {
         '/signin'   => $signinController(),
+        '/signout'  => $signoutController(),
         '/signup'   => $signupController(),
     };
 } catch (UnhandledMatchError | Exception $e) {

@@ -8,15 +8,12 @@ use tomtroc\services\ViewService;
 
 class SigninController
 {
-    private ViewService $viewService;
     private string $title = 'Tom Troc - Connexion';
-    private AuthenticationService $authenticationService;
 
-    public function __construct(ViewService $viewService, AuthenticationService $authenticationService)
-    {
-        $this->viewService = $viewService;
-        $this->authenticationService = $authenticationService;
-    }
+    public function __construct(
+        private ViewService $viewService,
+        private AuthenticationService $authenticationService
+    ) {}
 
     public function get()
     {
