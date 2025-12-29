@@ -30,13 +30,15 @@ class AuthenticationService
 
     public function logIn(string $email, string $password): bool
     {
-        if ($this->userRepository->findByEmailAndPassword($email, hash("sha256", $password)) === 1) {
+        $user = $this->userRepository->findByEmailAndPassword($email, hash("sha256", $password));
+
+        if ($user) {
             $requestUri = $this->sessionService->getRequestURI();
 
             $this->sessionService
                 ->regenerate()
                 ->setIsConnected(true)
-                ->setValue("id_user", $this->userRepository->findByEmail($email)->getId());
+                ->setValue("id_user", $user->getId());
 
             header("Location: //{$_SERVER['HTTP_HOST']}/{$requestUri}");
             return true;

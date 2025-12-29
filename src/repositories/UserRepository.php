@@ -105,11 +105,11 @@ class UserRepository
     /**
      * Find user by email and password
      */
-    public function findByEmailAndPassword($email, $password): int
+    public function findByEmailAndPassword($email, $password): User|bool
     {
-        $userCount = 0;
+        $user = null;
         $sql = <<<SQLREQUEST
-        SELECT COUNT(*) AS NbUser 
+        SELECT * 
         FROM users 
         WHERE email = :email AND password = :password
         SQLREQUEST;
@@ -122,13 +122,13 @@ class UserRepository
                 ':password' => $password
             ]);
 
-            $userCount = $stmt->fetchObject();
+            $user = $stmt->fetchObject(User::class);
             $stmt = null;
         } catch (\PDOException | \Exception $e) {
             throw $e;
         }
 
-        return $userCount->NbUser;
+        return $user;
     }
 
     /**

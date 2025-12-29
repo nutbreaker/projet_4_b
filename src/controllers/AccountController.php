@@ -8,8 +8,8 @@ use tomtroc\services\SessionService;
 use tomtroc\services\ViewService;
 use tomtroc\repositories\UserRepository;
 use tomtroc\repositories\BookRepository;
+use tomtroc\utils\Files;
 use tomtroc\utils\Utils;
-use tomtroc\utils\PostRequest;
 
 class AccountController
 {
@@ -120,17 +120,17 @@ class AccountController
     {
         $errors = [];
         $imagePath = null;
-        $isImageValid = PostRequest::isImageValid('avatar');
+        $isImageAllowed = Files::isAllowed($_FILES['avatar']);
 
-        if (!$isImageValid) {
+        if (!$isImageAllowed) {
             $errors['avatar'] = "Le format de l'image n'est pas valide.";
         }
 
         if (count($errors) === 0) {
-            $imagePath = PostRequest::saveFile('avatar');
+            $imagePath = Files::save($_FILES['avatar']);
         }
 
-        if ($imagePath === false) {
+        if (!$imagePath) {
             $errors['image'] = "Erreur lors de l'enregistrement de l'image.";
         }
 
@@ -148,9 +148,7 @@ class AccountController
         }
 
         try {
-            if (file_exists($user->getImage())) {
-                unlink($user->getImage());
-            }
+            Files::delete($user->getImage());
 
             $user
                 ->setImage($imagePath);
@@ -177,12 +175,12 @@ class AccountController
     {
         $errors = [];
 
-        $username = PostRequest::getValue('username');
-        $password = PostRequest::getValue('password');
-        $email = PostRequest::getValue('email');
-        $hasUserName = !empty($username);
+        $username = Utils::sanitize($_POST['username']);
+        $password = Utils::sanitize($_POST['password']);
+        $email = Utils::sanitize($_POST['email']);
+        $hasUserName = !Utils::isEmpty($username);
         $hasUserNameChanged = $hasUserName && $username !== $user->getUsername();
-        $hasEmail = !empty($email);
+        $hasEmail = !Utils::isEmpty($email);
         $hasEmailChanged = $hasEmail && $email !== $user->getEmail();
 
         if (!$hasUserName) {
@@ -256,7 +254,7 @@ class AccountController
             die();
         }
 
-        if (!empty($_FILES['avatar'])) {
+        if (!Files::isEmpty($_FILES['avatar'])) {
             $this->postUpdateImage($user);
 
             return;

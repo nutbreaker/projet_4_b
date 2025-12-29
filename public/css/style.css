@@ -132,6 +132,34 @@ a {
 
 /* 
 ********************************************************************************
+error
+********************************************************************************
+*/
+.error-container {
+    display: flex;
+    flex-grow: 1;
+    width: var(--template-width);
+    max-width: var(--container-max-width);
+    padding: 1.5em 2rem 0;
+}
+
+.error-section {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+}
+
+.errors {
+    flex-direction: column;
+    align-items: start;
+    gap: .5rem;
+    color: var(--color-red);
+    font-size: 1.2rem;
+}
+
+/* 
+********************************************************************************
 button
 ********************************************************************************
 */

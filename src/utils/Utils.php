@@ -7,12 +7,13 @@ class Utils
     /**
      * Checks if a string is empty after trimming whitespace.
      *
-     * @param string $value The string to check.
+     * @param string $file the string to check
+     * 
      * @return bool True if the string is empty, false otherwise.
      */
     public static function isEmpty(string $value): bool
     {
-        return empty(trim($value));
+        return !isset($value) || !strlen(trim($value));
     }
 
     /**
@@ -20,12 +21,19 @@ class Utils
      * entities and then re-encoding the string to prevent XSS attacks.
      *
      * @param string $value the input string to sanitize
+     * @param bool $trimSpaces if true, trims the whitespaces from the result 
      * 
      * @return string the sanitized string safe for HTML output
      */
-    public static function sanitize(string $value = ""): string
+    public static function sanitize(string $value = "", bool $trimSpaces = true): string
     {
-        return htmlentities(html_entity_decode($value));
+        $encodeValue = htmlentities(html_entity_decode($value));
+
+        if (!$trimSpaces) {
+            return $encodeValue;
+        }
+
+        return trim($encodeValue);
     }
 
     /**
