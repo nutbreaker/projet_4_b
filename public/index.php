@@ -5,6 +5,7 @@ use tomtroc\controllers\AccountController;
 use tomtroc\controllers\AddBookController;
 use tomtroc\controllers\EditBookController;
 use tomtroc\controllers\ErrorController;
+use tomtroc\controllers\HomeController;
 use tomtroc\controllers\SigninController;
 use tomtroc\controllers\SignoutController;
 use tomtroc\controllers\SignupController;
@@ -50,6 +51,12 @@ $editBookController = new EditBookController(
     $bookRepository,
 );
 $errorController = new ErrorController($viewService, $authenticationService);
+$homeController = new HomeController(
+    $viewService,
+    $authenticationService,
+    $userRepository,
+    $bookRepository,
+);
 $signinController = new SigninController($viewService, $authenticationService);
 $signoutController = new SignoutController($authenticationService);
 $signupController = new SignupController($viewService, $userRepository);
@@ -60,6 +67,7 @@ try {
     $urlPath = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
     match ($urlPath) {
+        '/'         => $homeController(),
         '/account'  => $accountController(),
         '/add'      => $addBookController(),
         '/edit'     => $editBookController(),
