@@ -78,7 +78,7 @@
                 <tbody>
                     <?php foreach ($params['books'] as $book): ?>
                         <tr class="table-row">
-                            <td class="table-row-picture"><img class="table-row-img" src="<?= $params['utils']::sanitize($book->getImage()) ?>" alt="<?= htmlentities($book->getTitle()) ?>"></td>
+                            <td class="table-row-picture"><img class="table-row-img" src="<?= $params['utils']::sanitize($book->getImage()) ?>" alt="<?= $params['utils']::sanitize($book->getTitle()) ?>"></td>
                             <td class="table-row-title"><?= $params['utils']::sanitize($book->getTitle()) ?></td>
                             <td class="table-row-author"><?= $params['utils']::sanitize($book->getAuthor()) ?></td>
                             <td class="table-row-description"><span class="table-row-description-container"><?= $params['utils']::sanitize($book->getDescription()) ?></span></td>

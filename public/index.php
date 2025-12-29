@@ -3,6 +3,7 @@ require_once('../config/autoload.php');
 
 use tomtroc\controllers\AccountController;
 use tomtroc\controllers\AddBookController;
+use tomtroc\controllers\EditBookController;
 use tomtroc\controllers\ErrorController;
 use tomtroc\controllers\SigninController;
 use tomtroc\controllers\SignoutController;
@@ -41,6 +42,13 @@ $addBookController = new AddBookController(
     $userRepository,
     $bookRepository
 );
+$editBookController = new EditBookController(
+    $viewService,
+    $authenticationService,
+    $sessionService,
+    $userRepository,
+    $bookRepository,
+);
 $errorController = new ErrorController($viewService, $authenticationService);
 $signinController = new SigninController($viewService, $authenticationService);
 $signoutController = new SignoutController($authenticationService);
@@ -54,6 +62,7 @@ try {
     match ($urlPath) {
         '/account'  => $accountController(),
         '/add'      => $addBookController(),
+        '/edit'     => $editBookController(),
         '/signin'   => $signinController(),
         '/signout'  => $signoutController(),
         '/signup'   => $signupController(),
