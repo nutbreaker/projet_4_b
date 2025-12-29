@@ -22,7 +22,6 @@ class AuthenticationService
         if (!$this->sessionService->getIsConnected()) {
             $this->sessionService->setRequestURI($_SERVER["REQUEST_URI"]);
 
-            header('HTTP/1.0 403 Forbidden', true, 403);
             header("Location: //{$_SERVER['HTTP_HOST']}/signin");
 
             die();
