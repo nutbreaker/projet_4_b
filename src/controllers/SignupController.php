@@ -5,14 +5,40 @@ namespace tomtroc\controllers;
 use tomtroc\models\User;
 use tomtroc\services\ViewService;
 use tomtroc\repositories\UserRepository;
-use tomtroc\utils\PostRequest;
+use tomtroc\utils\Utils;
 
 class SignupController
 {
     private string $title = 'Tom Troc - Inscription';
 
-    public function __construct(private ViewService $viewService, private UserRepository $userRepository)
-    { }
+    public function __construct(
+        private ViewService $viewService,
+        private UserRepository $userRepository
+    ) {}
+
+    public function __invoke()
+    {
+        if (!in_array($_SERVER['REQUEST_METHOD'], ['GET', 'POST'])) {
+            $this->viewService->view(
+                'error',
+                [
+                    'title' => '405 Method Not Allowed',
+                    'message' => 'Méthode non autorisée',
+                ],
+                405
+            );
+
+            die();
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $this->get();
+
+            return;
+        }
+
+        $this->post();
+    }
 
     public function get()
     {
@@ -23,9 +49,9 @@ class SignupController
     {
         $errors = [];
 
-        $email = PostRequest::getValue('email');
-        $username = PostRequest::getValue('username');
-        $password = PostRequest::getValue('password');
+        $email = Utils::sanitize($_POST['email']);
+        $username = Utils::sanitize($_POST['username']);
+        $password = Utils::sanitize($_POST['password']);
 
         if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = "L'adresse e-mail n'est pas valide.";
@@ -88,25 +114,5 @@ class SignupController
                 500
             );
         }
-    }
-
-    public function __invoke()
-    {
-        if (!in_array($_SERVER['REQUEST_METHOD'], ['GET', 'POST'])) {
-            $this->viewService->view('error', [
-                'title' => '405 Method Not Allowed',
-                'message' => 'Méthode non autorisée',
-            ], 405);
-
-            die();
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $this->get();
-
-            return;
-        }
-
-        $this->post();
     }
 }
