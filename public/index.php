@@ -8,6 +8,7 @@ use tomtroc\controllers\BooksController;
 use tomtroc\controllers\EditBookController;
 use tomtroc\controllers\ErrorController;
 use tomtroc\controllers\HomeController;
+use tomtroc\controllers\ProfileController;
 use tomtroc\controllers\SigninController;
 use tomtroc\controllers\SignoutController;
 use tomtroc\controllers\SignupController;
@@ -72,6 +73,13 @@ $homeController = new HomeController(
     $userRepository,
     $bookRepository,
 );
+$profileController = new ProfileController(
+    $viewService,
+    $authenticationService,
+    $sessionService,
+    $userRepository,
+    $bookRepository
+);
 $signinController = new SigninController($viewService, $authenticationService);
 $signoutController = new SignoutController($authenticationService);
 $signupController = new SignupController($viewService, $userRepository);
@@ -88,6 +96,7 @@ try {
         '/book'     => $bookController(),
         '/books'    => $booksController(),
         '/edit'     => $editBookController(),
+        '/profile'  => $profileController(),
         '/signin'   => $signinController(),
         '/signout'  => $signoutController(),
         '/signup'   => $signupController(),
