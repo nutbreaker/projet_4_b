@@ -3,6 +3,7 @@ require_once('../config/autoload.php');
 
 use tomtroc\controllers\AccountController;
 use tomtroc\controllers\AddBookController;
+use tomtroc\controllers\BookController;
 use tomtroc\controllers\BooksController;
 use tomtroc\controllers\EditBookController;
 use tomtroc\controllers\ErrorController;
@@ -25,7 +26,7 @@ $bookRepository = new BookRepository($database);
 $userRepository = new UserRepository($database);
 
 //Services
-$sessionService = new SessionService("tomtroc_session");
+$sessionService = new SessionService('../config/sessions' ,'tomtroc_session');
 $viewService = new ViewService('templates/', '_base_template');
 $authenticationService = new AuthenticationService($sessionService, $userRepository);
 
@@ -43,6 +44,13 @@ $addBookController = new AddBookController(
     $sessionService,
     $userRepository,
     $bookRepository
+);
+$bookController = new BookController(
+    $viewService,
+    $authenticationService,
+    $sessionService,
+    $userRepository,
+    $bookRepository,
 );
 $booksController = new BooksController(
     $viewService,
@@ -77,6 +85,7 @@ try {
         '/'         => $homeController(),
         '/account'  => $accountController(),
         '/add'      => $addBookController(),
+        '/book'     => $bookController(),
         '/books'    => $booksController(),
         '/edit'     => $editBookController(),
         '/signin'   => $signinController(),
