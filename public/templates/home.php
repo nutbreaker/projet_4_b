@@ -26,19 +26,7 @@
               <h2>Les derniers livres ajoutés</h2>
               <div class="latest-books-cards card-container">
                   <?php foreach ($params['books'] as $book): ?>
-                      <a href="book?id=<?= $params['utils']::sanitize($book->getId()) ?>">
-                          <figure class="card">
-                              <img
-                                  class="card-img"
-                                  src="<?= $params['utils']::sanitize($book->getImage()) ?>"
-                                  alt="<?= $params['utils']::sanitize($book->getTitle()) ?>">
-                              <figcaption class="card-figcaption">
-                                  <h3 class="card-figcaption-title"><?= $params['utils']::sanitize($book->getTitle()) ?></h3>
-                                  <p class="card-figcaption-subtitle"><?= $params['utils']::sanitize($book->getAuthor()) ?></p>
-                                  <span class="card-figcaption-info">Vendu par : <?= $params['utils']::sanitize($params['userRepository']->find($book->getUserId())->getUsername()) ?></span>
-                              </figcaption>
-                          </figure>
-                      </a>
+                      <?php require('_card.php') ?>
                   <?php endforeach; ?>
               </div>
 
