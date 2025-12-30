@@ -5,6 +5,7 @@ use tomtroc\controllers\AccountController;
 use tomtroc\controllers\AddBookController;
 use tomtroc\controllers\BookController;
 use tomtroc\controllers\BooksController;
+use tomtroc\controllers\ChatController;
 use tomtroc\controllers\EditBookController;
 use tomtroc\controllers\ErrorController;
 use tomtroc\controllers\HomeController;
@@ -13,6 +14,7 @@ use tomtroc\controllers\SigninController;
 use tomtroc\controllers\SignoutController;
 use tomtroc\controllers\SignupController;
 use tomtroc\repositories\BookRepository;
+use tomtroc\repositories\ChatRepository;
 use tomtroc\repositories\UserRepository;
 use tomtroc\services\AuthenticationService;
 use tomtroc\services\SessionService;
@@ -25,6 +27,7 @@ $database =  Database::getInstance('../database/tomtroc.db');
 //Repositories
 $bookRepository = new BookRepository($database);
 $userRepository = new UserRepository($database);
+$chatRepository = new ChatRepository($database);
 
 //Services
 $sessionService = new SessionService('../config/sessions' ,'tomtroc_session');
@@ -58,6 +61,13 @@ $booksController = new BooksController(
     $authenticationService,
     $userRepository,
     $bookRepository,
+);
+$chatController = new ChatController(
+    $viewService,
+    $authenticationService,
+    $sessionService,
+    $userRepository,
+    $chatRepository,
 );
 $editBookController = new EditBookController(
     $viewService,
@@ -95,6 +105,7 @@ try {
         '/add'      => $addBookController(),
         '/book'     => $bookController(),
         '/books'    => $booksController(),
+        '/chat'     => $chatController(),
         '/edit'     => $editBookController(),
         '/profile'  => $profileController(),
         '/signin'   => $signinController(),
