@@ -4,7 +4,7 @@ namespace tomtroc\controllers;
 
 use tomtroc\services\AuthenticationService;
 use tomtroc\services\ViewService;
-
+use tomtroc\utils\Utils;
 
 class SigninController
 {
@@ -24,8 +24,8 @@ class SigninController
     {
         $errors = [];
 
-        $email = htmlentities($_POST['email'] ?? '');
-        $password = htmlentities($_POST['password'] ?? '');
+        $email = Utils::sanitize($_POST['email']);
+        $password = Utils::sanitize($_POST['password']);
 
         if (empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = "L'adresse e-mail n'est pas valide.";
@@ -55,12 +55,14 @@ class SigninController
     public function __invoke()
     {
         if (!in_array($_SERVER['REQUEST_METHOD'], ['GET', 'POST'])) {
-            http_response_code(405);
-
-            $this->viewService->view('error', [
-                'title' => 'Tom Troc - 405 Method Not Allowed',
-                'message' => 'Méthode non autorisée',
-            ]);
+            $this->viewService->view(
+                'error',
+                [
+                    'title' => 'Tom Troc - 405 Method Not Allowed',
+                    'message' => 'Méthode non autorisée',
+                ],
+                405
+            );
 
             die();
         }
