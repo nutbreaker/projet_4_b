@@ -2,7 +2,7 @@
 
 namespace tomtroc\utils;
 
-class Utils
+abstract class Utils
 {
     /**
      * Checks if a string is empty after trimming whitespace.

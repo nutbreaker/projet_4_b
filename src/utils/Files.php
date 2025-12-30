@@ -2,7 +2,7 @@
 
 namespace tomtroc\utils;
 
-class Files
+abstract class Files
 {
     /**
      * Checks if the file array is empty.
