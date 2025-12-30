@@ -4,8 +4,10 @@ namespace tomtroc\services;
 
 class SessionService
 {
-    public function __construct(string $sessionName)
+    public function __construct(string $savePath, string $sessionName)
     {
+        session_save_path($savePath);
+
         session_set_cookie_params([
             'lifetime' => 0,
             'path' => '/',
