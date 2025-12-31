@@ -44,6 +44,8 @@ class ChatController
             $this->sessionService->getValue("id_user")
         );
 
+        $receiverId = intval($_GET['id'] ?? null);
+
         if (!$user) {
             $this->viewService->view('error', [
                 'title' => '404 Not Found',
@@ -55,20 +57,19 @@ class ChatController
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $this->get($user);
+            $this->get($receiverId, $user);
 
             return;
         }
 
-        $this->post($user);
+        $this->post($receiverId, $user);
     }
 
-    public function get(User $user): void
+    public function get(int $receiverId, User $user): void
     {
         try {
             $chatPartners = $this->getChatPartners($user);
             $messages = [];
-            $receiverId = $_GET['id'] ?? null;
             $receiver = $this->getMessageReceiver($receiverId, $user);
 
             if ($receiver) {
@@ -99,11 +100,10 @@ class ChatController
         }
     }
 
-    public function post(User $user): void
+    public function post(int $receiverId, User $user): void
     {
         try {
             $chatMessage = Utils::sanitize($_POST['chat-message-text'] ?? '');
-            $receiverId = $_GET['id'] ?? null;
             $receiver = $this->getMessageReceiver($receiverId, $user);
 
             if ($chatMessage) {
@@ -129,7 +129,7 @@ class ChatController
         }
     }
 
-    private function denySameUserChat(User $receiver, User $user)
+    private function denySameUserChat(?User $receiver, User $user)
     {
         if ($receiver && $receiver->getId() === $user->getId()) {
             $this->viewService->view('error', [
