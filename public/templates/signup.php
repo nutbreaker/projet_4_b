@@ -14,7 +14,7 @@
                 Mot de passe
                 <input type="password" name="password" id="password" required>
             </label>
-            <button class="btn" href="#">S'inscrire</button>
+            <button class="btn">S'inscrire</button>
 
             <?php if (!empty($params['errors'])): ?>
                 <ul class="errors">

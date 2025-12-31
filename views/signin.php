@@ -62,7 +62,7 @@
                         Mot de passe
                         <input type="password" name="password" id="password">
                     </label>
-                    <button class="btn" href="#">S'inscrire</button>
+                    <button class="btn">S'inscrire</button>
 
                     <span>Déjà inscrit ? <a href="/signup">Connectez-vous</a></span>
                 </form>

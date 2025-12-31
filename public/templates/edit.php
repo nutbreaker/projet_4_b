@@ -51,7 +51,7 @@
                             <option value="0" <?= $params['utils']::sanitize($params['book']->getAvailability()) == 0 ? 'selected' : '' ?>>non disponible</option>
                         </select>
                     </label>
-                    <button class="btn" href="#">Valider</button>
+                    <button class="btn">Valider</button>
 
                     <?php if (!empty($params['errors'])): ?>
                         <ul class="errors">

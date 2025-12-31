@@ -10,7 +10,7 @@
                 Mot de passe
                 <input type="password" name="password" id="password" required>
             </label>
-            <button class="btn" href="#">Se connecter</button>
+            <button class="btn">Se connecter</button>
 
             <?php if (!empty($params['errors'])): ?>
                 <ul class="errors">

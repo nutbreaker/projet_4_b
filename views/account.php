@@ -96,7 +96,7 @@
                                 Pseudo
                                 <input type="text" name="username" id="username" placeholder="nathalire">
                             </label>
-                            <button class="btn btn-invert" href="#">Enregistrer</button>
+                            <button class="btn btn-invert">Enregistrer</button>
                         </form>
                     </div>
                 </div>
