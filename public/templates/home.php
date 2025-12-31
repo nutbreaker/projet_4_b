@@ -49,7 +49,7 @@
           </div>
 
           <?php if (!empty($params['books'])) : ?>
-              <a class="btn btn-invert" href="">Voir tous les livres</a>
+              <a class="btn btn-invert" href="/books">Voir tous les livres</a>
           <?php endif; ?>
       </div>
   </section>
