@@ -150,9 +150,26 @@ class ChatController
             $receiver = $this->userRepository->find($receiverId);
         }
 
+        $this->hasChatPartner($receiverId, $receiver);
         $this->denySameUserChat($receiver, $user);
 
         return $receiver;
+    }
+
+    public function hasChatPartner($receiverId, $receiver)
+    {
+        if ($receiverId && !$receiver) {
+            $this->viewService->view(
+                'error',
+                [
+                    'title' => '404 Not Found',
+                    'message' => 'Chat non trouvé.',
+                ],
+                404
+            );
+
+            die();
+        }
     }
 
     private function getChatPartners(User $user): array
