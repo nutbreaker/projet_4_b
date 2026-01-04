@@ -138,7 +138,7 @@
                             <td class="table-row-availibility"><span class="table-row-available">disponible</span></td>
                             <td class="table-row-action">
                                 <span class="table-raw-action-container">
-                                    <a class="table-edit" href="edit">éditer</a> <a class="table-delete" href="#">supprimer</a>
+                                    <a class="table-edit" href="/edit">éditer</a> <a class="table-delete" href="#">supprimer</a>
                                 </span>
                             </td>
                         </tr>
@@ -169,7 +169,7 @@
                             </td>
                             <td class="table-row-action">
                                 <span class="table-raw-action-container">
-                                    <a class="table-edit" href="edit">éditer</a> <a class="table-delete" href="#">supprimer</a>
+                                    <a class="table-edit" href="/edit">éditer</a> <a class="table-delete" href="#">supprimer</a>
                                 </span>
                             </td>
                         </tr>

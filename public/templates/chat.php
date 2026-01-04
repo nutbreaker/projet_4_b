@@ -4,7 +4,7 @@
         <ul>
             <?php foreach ($params['chatPartners'] as $chatPartner): ?>
                 <li class="<?= $params['receiver'] && $params['receiver']->getId() === $chatPartner['partner']->getId() ? 'chat-active' : '' ?>">
-                    <a class="chat-user" href="chat?id=<?= $chatPartner['partner']->getId() ?>">
+                    <a class="chat-user" href="/chat?id=<?= $chatPartner['partner']->getId() ?>">
                         <img src="<?= $params['utils']::sanitize($chatPartner['partner']->getImage()) ?>" alt="<?= $params['utils']::sanitize($chatPartner['partner']->getUserName()) ?>">
                         <div class="chat-details">
                             <div class="chat-details-header">

@@ -1,5 +1,5 @@
 <?php $bookId = $params['utils']::sanitize($book->getId()); ?>
-<a href="book?id=<?= $bookId ?>"
+<a href="/book?id=<?= $bookId ?>"
 aria-labelledby="card-figcaption-title-<?= $bookId ?> card-figcaption-subtitle-<?= $bookId ?> card-figcaption-unavailable-<?= $bookId ?> card-figcaption-info-<?= $bookId ?>"
 >
     <figure class="card">
