@@ -1452,6 +1452,10 @@ main:has(.chat-container) {
         width: 100%;
     }
 
+    .hide-reponsive {
+        display: none !important;
+    }
+
     /*
     ****************************************************************************
     card

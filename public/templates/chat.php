@@ -1,5 +1,6 @@
+<?php $hasReceiver = isset($params['receiver']); ?>
 <div class="chat-container">
-    <aside class="chat-user-list">
+    <aside class="chat-user-list <?= $hasReceiver ? 'hide-reponsive' : '' ?>">
         <h2>Messagerie</h2>
         <ul>
             <?php foreach ($params['chatPartners'] as $chatPartner): ?>
@@ -18,7 +19,7 @@
             <?php endforeach; ?>
         </ul>
     </aside>
-    <section class="chat-window">
+    <section class="chat-window <?= !$hasReceiver ? 'hide-reponsive' : '' ?>">
         <?php if ($params['receiver']): ?>
             <?php
             $sanitizedReceiverImage = $params['utils']::sanitize($params['receiver']->getImage());
