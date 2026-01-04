@@ -1,7 +1,8 @@
 <?php $bookId = $params['utils']::sanitize($book->getId()); ?>
+<!-- https://www.w3.org/TR/WCAG20-TECHS/ARIA13.html#ARIA13-examples -->
+<!-- https://github.com/validator/validator/issues/2021 -->
 <a href="/book?id=<?= $bookId ?>"
-aria-labelledby="card-figcaption-title-<?= $bookId ?> card-figcaption-subtitle-<?= $bookId ?> card-figcaption-unavailable-<?= $bookId ?> card-figcaption-info-<?= $bookId ?>"
->
+    aria-labelledby="card-figcaption-title-<?= $bookId ?> card-figcaption-subtitle-<?= $bookId ?> card-figcaption-unavailable-<?= $bookId ?> card-figcaption-info-<?= $bookId ?>">
     <figure class="card">
         <img
             class="card-img"
