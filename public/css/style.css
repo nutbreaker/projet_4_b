@@ -132,6 +132,34 @@ a {
 
 /* 
 ********************************************************************************
+error
+********************************************************************************
+*/
+.error-container {
+    display: flex;
+    flex-grow: 1;
+    width: var(--template-width);
+    max-width: var(--container-max-width);
+    padding: 1.5em 2rem 0;
+}
+
+.error-section {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+}
+
+.errors {
+    flex-direction: column;
+    align-items: start;
+    gap: .5rem;
+    color: var(--color-red);
+    font-size: 1.2rem;
+}
+
+/* 
+********************************************************************************
 button
 ********************************************************************************
 */
@@ -187,6 +215,7 @@ card
 }
 
 .card {
+    position: relative;
     margin: 0;
     border-radius: 1rem;
     background: var(--color-white);
@@ -206,6 +235,7 @@ card
 }
 
 .card-figcaption-title {
+    color: var(--color-black);
     font-size: var(--card-figcaption-title-font-size);
     font-weight: 400;
 }
@@ -214,6 +244,18 @@ card
     margin: 0;
     font-size: var(--card-figcaption-subtile-font-size);
     color: var(--color-dark-gray);
+}
+
+.card-figcaption-unavailable {
+    position: absolute;
+    width: fit-content;
+    top: 1.6rem;
+    right: 1.1rem;
+    padding: .37rem 1.3rem;
+    color: white;
+    font-weight: 500;
+    background: var(--color-light-red);
+    border-radius: 15%/50%;
 }
 
 .card-figcaption-info {
@@ -677,6 +719,7 @@ book
 
     img {
         width: 100%;
+        min-width: 50%;
         height: 86.3rem;
         object-fit: cover;
         flex: 1 1 50%;
@@ -865,8 +908,18 @@ Account
 }
 
 .account-books {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
     margin-block: 3.2rem 10.4rem;
     margin-inline: 2rem;
+}
+
+.account-add-book {
+    align-self: flex-end;
+    color: var(--color-darkest-gray);
+    text-decoration: underline;
 }
 
 .account-title {
@@ -924,16 +977,15 @@ Account
     }
 }
 
-.account-image-container {
-    width: 13.5rem;
-    aspect-ratio: 1;
-    overflow: hidden;
-    border-radius: 50%;
-}
+.account-image-container {}
 
 .account-img {
     width: 100%;
-    transform: scale(1.3);
+    max-width: 13.5rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 50%;
 }
 
 .avatar-form {
@@ -1240,8 +1292,6 @@ main:has(.chat-container) {
     }
 }
 
-
-
 .chat-active {
     background-color: var(--color-white);
 }
@@ -1249,6 +1299,10 @@ main:has(.chat-container) {
 .chat-user {
     display: flex;
     gap: 1.2rem;
+}
+
+.chat-details {
+    flex: 1;
 }
 
 .chat-details-header {
@@ -1305,8 +1359,14 @@ main:has(.chat-container) {
     height: 100%;
 }
 
+.chat-info {
+    margin: auto;
+}
+
 .message-received,
 .message-sent {
+    max-width: 50rem;
+
     p {
         padding: 1rem 1.8rem;
         color: var(--color-darkest-gray);
@@ -1390,6 +1450,10 @@ main:has(.chat-container) {
 
     .btn {
         width: 100%;
+    }
+
+    .hide-reponsive {
+        display: none !important;
     }
 
     /*
@@ -1626,10 +1690,6 @@ main:has(.chat-container) {
         }
     }
 
-    .chat-details {
-        width: 100%;
-    }
-
     .chat-window {
         background-color: var(--color-lighter-gray);
         padding: 2.3rem 2rem;
@@ -1786,6 +1846,7 @@ main:has(.chat-container) {
 
     .profile-books {
         .table-row {
+            height: unset;
             grid-template-rows: repeat(4, auto);
         }
 

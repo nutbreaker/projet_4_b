@@ -58,7 +58,7 @@
                         Mot de passe
                         <input type="password" name="password" id="password">
                     </label>
-                    <button class="btn" href="#">Se connecter</button>
+                    <button class="btn">Se connecter</button>
 
                     <span>Pas de compte ? <a href="/signin">Inscrivez-vous</a></span>
                 </form>
