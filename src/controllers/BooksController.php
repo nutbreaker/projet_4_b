@@ -33,7 +33,7 @@ class BooksController
         $this->get();
     }
 
-    public function get(): void
+    private function get(): void
     {
         $query = $_GET['q'] ?? null;
 

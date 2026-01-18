@@ -6,7 +6,9 @@ use tomtroc\services\AuthenticationService;
 
 class SignoutController
 {
-    public function __construct(private AuthenticationService $authenticationService) {}
+    public function __construct(
+        private AuthenticationService $authenticationService
+    ) {}
 
     public function __invoke()
     {

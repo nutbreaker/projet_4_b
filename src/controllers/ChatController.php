@@ -65,7 +65,7 @@ class ChatController
         $this->post($receiverId, $user);
     }
 
-    public function get(int $receiverId, User $user): void
+    private function get(int $receiverId, User $user): void
     {
         try {
             $chatPartners = $this->getChatPartners($user);
@@ -93,14 +93,15 @@ class ChatController
                 'error',
                 [
                     'title' => '500 Internal Server Error',
-                    'message' => $message
+                    'message' => $message,
+                    'isAuthenticated' => $this->authenticationService->isLoggedIn(),
                 ],
                 500
             );
         }
     }
 
-    public function post(int $receiverId, User $user): void
+    private function post(int $receiverId, User $user): void
     {
         try {
             $chatMessage = Utils::sanitize($_POST['chat-message-text'] ?? '');
@@ -164,6 +165,7 @@ class ChatController
                 [
                     'title' => '404 Not Found',
                     'message' => 'Chat non trouvé.',
+                    'isAuthenticated' => $this->authenticationService->isLoggedIn(),
                 ],
                 404
             );
@@ -175,11 +177,18 @@ class ChatController
     private function getChatPartners(User $user): array
     {
         $chatPartners = [];
-        $chatPartnerIds = $this->chatRepository->findChatPartnerIdsByUserId($user->getId());
+        $chatPartnerIds = $this->chatRepository
+            ->findChatPartnerIdsByUserId(
+                $user->getId()
+            );
 
         foreach ($chatPartnerIds as $partnerId) {
             $partner = $this->userRepository->find($partnerId);
-            $partnerMessages = $this->chatRepository->findAllBySendAndReceiverId($user->getId(), $partner->getId());
+            $partnerMessages = $this->chatRepository
+                ->findAllBySendAndReceiverId(
+                    $user->getId(),
+                    $partner->getId()
+                );
             $chatPartners[] = [
                 'partner' => $partner,
                 'lastMessage' => end($partnerMessages)

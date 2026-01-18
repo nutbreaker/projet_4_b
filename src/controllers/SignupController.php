@@ -40,12 +40,12 @@ class SignupController
         $this->post();
     }
 
-    public function get()
+    private function get()
     {
         $this->viewService->view('signup', ['title' => $this->title]);
     }
 
-    public function post()
+    private function post()
     {
         $errors = [];
 

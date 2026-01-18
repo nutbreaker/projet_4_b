@@ -40,7 +40,7 @@ class ProfileController
         $this->get();
     }
 
-    public function get(): void
+    private function get(): void
     {
         try {
             $id = $_GET['id'] ?? null;

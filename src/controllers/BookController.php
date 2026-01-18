@@ -39,7 +39,7 @@ class BookController
         $this->get();
     }
 
-    public function get(): void
+    private function get(): void
     {
         try {
             $id = $_GET['id'] ?? null;
@@ -64,8 +64,10 @@ class BookController
                 'title' => $this->title . $book->getTitle(),
                 'book' => $book,
                 'user' => $user,
-                'isAuthenticated' => $this->authenticationService->isLoggedIn(),
-                'isUserMatch' => $user->getId() === $this->sessionService->getValue("id_user"),
+                'isAuthenticated' => $this->authenticationService
+                    ->isLoggedIn(),
+                'isUserMatch' => $user->getId() === $this->sessionService
+                    ->getValue("id_user"),
                 'utils' => Utils::class,
             ]);
         } catch (\Exception $e) {

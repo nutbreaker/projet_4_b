@@ -58,7 +58,7 @@ class EditBookController
         $this->post($user);
     }
 
-    public function get(User $user): void
+    private function get(User $user): void
     {
         $book_id = $_GET['book_id'] ?? null;
 
@@ -82,7 +82,7 @@ class EditBookController
         ]);
     }
 
-    public function post(User $user): void
+    private function post(User $user): void
     {
         $book_id = intval($_GET['book_id'] ?? null);
 
@@ -167,7 +167,7 @@ class EditBookController
         }
     }
 
-    public function postUpdateInfo(Book $book)
+    private function postUpdateInfo(Book $book)
     {
         $errors = [];
 

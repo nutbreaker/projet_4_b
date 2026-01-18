@@ -17,12 +17,25 @@ class HomeController
         private BookRepository $bookRepositoriy,
     ) {}
 
-    public function post(): void
+    public function __invoke()
     {
-        return;
+        if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
+            $this->viewService->view(
+                'error',
+                [
+                    'title' => '405 Method Not Allowed',
+                    'message' => 'Méthode non autorisée',
+                ],
+                405
+            );
+
+            die();
+        }
+
+        $this->get();
     }
 
-    public function get(): void
+    private function get(): void
     {
         try {
             $books = $this->bookRepositoriy->findLimited(4);
@@ -47,23 +60,5 @@ class HomeController
 
             die();
         }
-    }
-
-    public function __invoke()
-    {
-        if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
-            $this->viewService->view(
-                'error',
-                [
-                    'title' => '405 Method Not Allowed',
-                    'message' => 'Méthode non autorisée',
-                ],
-                405
-            );
-
-            die();
-        }
-
-        $this->get();
     }
 }

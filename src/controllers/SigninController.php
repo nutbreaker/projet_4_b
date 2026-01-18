@@ -15,12 +15,36 @@ class SigninController
         private AuthenticationService $authenticationService
     ) {}
 
-    public function get()
+    public function __invoke()
+    {
+        if (!in_array($_SERVER['REQUEST_METHOD'], ['GET', 'POST'])) {
+            $this->viewService->view(
+                'error',
+                [
+                    'title' => '405 Method Not Allowed',
+                    'message' => 'Méthode non autorisée',
+                ],
+                405
+            );
+
+            die();
+        }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            $this->get();
+
+            return;
+        }
+
+        $this->post();
+    }
+
+    private function get()
     {
         $this->viewService->view('signin', ['title' => $this->title]);
     }
 
-    public function post()
+    private function post()
     {
         $errors = [];
 
@@ -50,29 +74,5 @@ class SigninController
 
             return;
         }
-    }
-
-    public function __invoke()
-    {
-        if (!in_array($_SERVER['REQUEST_METHOD'], ['GET', 'POST'])) {
-            $this->viewService->view(
-                'error',
-                [
-                    'title' => 'Tom Troc - 405 Method Not Allowed',
-                    'message' => 'Méthode non autorisée',
-                ],
-                405
-            );
-
-            die();
-        }
-
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            $this->get();
-
-            return;
-        }
-
-        $this->post();
     }
 }

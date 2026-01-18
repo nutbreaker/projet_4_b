@@ -57,7 +57,7 @@ class AddBookController
         $this->post($user);
     }
 
-    public function get(): void
+    private function get(): void
     {
         $this->viewService->view('add_book', [
             'title' => $this->title,
@@ -65,7 +65,7 @@ class AddBookController
         ]);
     }
 
-    public function post(User $user): void
+    private function post(User $user): void
     {
         $errors = [];
 

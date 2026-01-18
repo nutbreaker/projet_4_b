@@ -24,12 +24,11 @@ class AccountController
     ) {}
 
 
-
     public function __invoke()
     {
         if (!in_array($_SERVER['REQUEST_METHOD'], ['POST', 'GET'])) {
             $this->viewService->view('error', [
-                'title' => 'Tom Troc - 405 Method Not Allowed',
+                'title' => '405 Method Not Allowed',
                 'message' => 'Méthode non autorisée',
             ], 405);
 
@@ -56,7 +55,7 @@ class AccountController
         $this->post($user);
     }
 
-    public function get(User $user): void
+    private function get(User $user): void
     {
         $deleteBookId = $_GET['delete_book_id'] ?? null;
 
@@ -116,7 +115,7 @@ class AccountController
         die();
     }
 
-    public function postUpdateImage(User $user): void
+    private function postUpdateImage(User $user): void
     {
         $errors = [];
         $imagePath = null;
@@ -171,7 +170,7 @@ class AccountController
         }
     }
 
-    public function postUpdateInfo(User $user): void
+    private function postUpdateInfo(User $user): void
     {
         $errors = [];
 
@@ -242,7 +241,7 @@ class AccountController
         }
     }
 
-    public function post(User $user): void
+    private function post(User $user): void
     {
         if (!$user) {
             $this->viewService->view('error', [
