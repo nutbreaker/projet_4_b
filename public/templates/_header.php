@@ -10,7 +10,7 @@
             <img src="img/icon_menu.svg" alt="Menu button">
         </button>
 
-        <nav popover id="header-nav" class="header-nav">
+        <nav popover id="header-nav" class="header-nav" aria-label="Menu principal">
             <ul class="header-menu">
                 <li>
                     <a href="/">Accueil</a>
