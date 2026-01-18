@@ -45,6 +45,10 @@
     scrollbar-color: var(--color-green-dark) transparent;
 }
 
+:focus-visible {
+    outline: solid var(--color-light-red);
+}
+
 html {
     color: var(--color-darkest-gray);
     background-color: var(--color-lightest-gray);
@@ -674,6 +678,10 @@ book exchange
     background: var(--color-white);
     border: solid 1px #f0f0f0;
     border-radius: .6rem;
+
+    &:focus-within {
+        outline: solid var(--color-light-red);
+    }
 }
 
 .book-exchange-search::before {
