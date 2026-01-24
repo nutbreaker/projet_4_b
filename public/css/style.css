@@ -1956,6 +1956,10 @@ main:has(.chat-container) {
 
     .edit-book-form {
         max-width: unset;
+
+        .btn {
+            width: 100%;
+        }
     }
 
     /*
