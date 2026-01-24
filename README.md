@@ -9,7 +9,7 @@ This project is a web application allowing users to share books. Users can regis
 * **User Authentication:** signup, signin, and signout functionalities
 * **Book Management:** users can `add` new books, `edit` existing book details, view a catalog of all available books, and `delete` their own books
 * **User Profiles:** each user has a profile page displaying their shared books and other relevant information
-* **Real-time Chat:** a messaging system allows users to communicate directly with each other
+* **Chat:** a messaging system allows users to communicate directly with each other
 
 ## Technologies Used
 
@@ -59,7 +59,7 @@ Follow these steps to get the project up and running on your local machine:
 
 ## How to use the app
 
-1. **Register:** create a new account using the `Inscrivez-vous` page
+1. **Sign up:** create a new account using the `Inscrivez-vous` page
 2. **Sign In:** log in to your account using the `Connexion` page
 3. **Add a Book:** go to the `Mon compte` page then click `Ajouter un livre` to add a book.
 4. **Browse Books:** go to `Nos livres à l'échange` page to explore available books on the platform
