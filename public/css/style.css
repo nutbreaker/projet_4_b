@@ -1686,6 +1686,7 @@ main:has(.chat-container) {
 
     .chat-user-list {
         width: 100%;
+        flex-grow: 1;
 
         & li {
             padding: 2.3rem 2rem;
