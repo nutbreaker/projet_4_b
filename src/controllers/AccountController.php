@@ -253,7 +253,7 @@ class AccountController
             die();
         }
 
-        if (!Files::isEmpty($_FILES['avatar'])) {
+        if (!empty($_FILES) && !Files::isEmpty($_FILES['avatar'])) {
             $this->postUpdateImage($user);
 
             return;
