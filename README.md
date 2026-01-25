@@ -23,6 +23,14 @@ The project is built primarily with PHP, utilizing a custom MVC-like architectur
 
 Follow these steps to get the project up and running on your local machine:
 
+> [!IMPORTANT]
+> 
+> Ensure you have the following installed:
+>
+> * **PHP 8.2+** with `pdo_sqlite` and `sqlite3` extensions enabled
+>
+> * **SQLite3** command line tool (to run database scripts)
+
 1. **Clone the repository:**
 
    ```bash
