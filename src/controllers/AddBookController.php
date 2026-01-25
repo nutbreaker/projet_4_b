@@ -94,7 +94,7 @@ class AddBookController
             $errors['availability'] = "Le disponibilité est requis.";
         }
 
-        if (!Files::isEmpty($image) && $isImageAllowed) {
+        if (!Files::isEmpty($image) && !$isImageAllowed) {
             $errors['image'] = "L'image n'est pas valide.";
         }
 
