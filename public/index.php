@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+
 require_once('../config/autoload.php');
 
 use tomtroc\controllers\AccountController;
@@ -114,7 +116,7 @@ try {
 
         default     => $errorController("404 Not Found", "Page non trouvé.", 404),
     };
-} catch (UnhandledMatchError | Exception $e) {
+} catch (UnhandledMatchError | TypeError | Exception $e) {
     error_log($e->getMessage());
 
     $errorController(
